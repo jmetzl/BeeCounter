@@ -22566,7 +22566,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R50"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "71a22e41-1e87-4b18-ade9-3d19bff85c26")
 			(effects
@@ -22577,7 +22577,7 @@
 			)
 		)
 		(property "Value" "R102"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "8fed7edc-ddfc-4847-b607-b2a8a1f662f7")
 			(effects
@@ -22729,7 +22729,7 @@
 			(uuid "6845f577-3306-4508-90a6-be5f96057342")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "0c194c53-03f2-45cf-b95b-a6516850106a")
 			(effects
@@ -38757,7 +38757,7 @@
 		(start 82.35 46.9)
 		(end 83.45 48)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -38768,7 +38768,7 @@
 		(start 82.35 51.85026)
 		(end 82.35 49.449739)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -38955,7 +38955,7 @@
 		(start 78.2 56.05)
 		(end 82.4 51.85)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -38977,7 +38977,7 @@
 		(start 65.8 57.25)
 		(end 65.85 51.45)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39021,7 +39021,7 @@
 		(start 83.45 53.5)
 		(end 79.999638 56.950362)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39087,7 +39087,7 @@
 		(start 59.4 49.4)
 		(end 59.4 58.35)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39296,7 +39296,7 @@
 		(start 59.4 58.35)
 		(end 78.95 58.35)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39395,7 +39395,7 @@
 		(start 61.9 49.4)
 		(end 61.85 57.1)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39417,7 +39417,7 @@
 		(start 76.15 56.05)
 		(end 78.2 56.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39461,7 +39461,7 @@
 		(start 64.5 49.55)
 		(end 64.5 54.9)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39472,7 +39472,7 @@
 		(start 67.05 46.9)
 		(end 64.75 44.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39571,7 +39571,7 @@
 		(start 64.5 46.95)
 		(end 65.8 48.25)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39604,7 +39604,7 @@
 		(start 79.65 46.85)
 		(end 81 48.2)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39615,7 +39615,7 @@
 		(start 58.05 45.95)
 		(end 59.4 44.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39681,7 +39681,7 @@
 		(start 81 50.7)
 		(end 76.774926 54.925074)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "F.Cu")
@@ -39758,7 +39758,7 @@
 		(start 49.15 58.35)
 		(end 51.5 56)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39769,7 +39769,7 @@
 		(start 50.112394 58.787606)
 		(end 50.05 165.5)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39780,7 +39780,7 @@
 		(start 45.5 109.95)
 		(end 47.202635 108.247365)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39813,7 +39813,7 @@
 		(start 65.8 57.2)
 		(end 76.697999 57.2)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39824,7 +39824,7 @@
 		(start 50.965268 59.384732)
 		(end 52.104398 58.245602)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39847,7 +39847,7 @@
 		(start 87.9 170.05)
 		(end 84.55 170.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39858,7 +39858,7 @@
 		(start 42.2 129.95)
 		(end 45.55 129.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39881,7 +39881,7 @@
 		(start 78.1 64.35)
 		(end 78.1 71.750169)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39892,7 +39892,7 @@
 		(start 78.15 184.199831)
 		(end 78.15 191.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39903,7 +39903,7 @@
 		(start 51.5 56)
 		(end 76.2 56)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39936,7 +39936,7 @@
 		(start 69.6 49.45)
 		(end 72.65 52.5)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39947,7 +39947,7 @@
 		(start 51.05 54.9)
 		(end 64.5 54.9)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39958,7 +39958,7 @@
 		(start 87.9 110.05)
 		(end 84.55 110.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39980,7 +39980,7 @@
 		(start 45.45 149.95)
 		(end 49.05 146.35)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -39991,7 +39991,7 @@
 		(start 53.037459 45.66254)
 		(end 55.150591 43.549408)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40013,7 +40013,7 @@
 		(start 84.65 56.95)
 		(end 84.65 70.012593)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40035,7 +40035,7 @@
 		(start 84.55 170.05)
 		(end 80.171507 165.671507)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40058,7 +40058,7 @@
 		(start 83.65 57.35)
 		(end 83.65 89.100061)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40069,7 +40069,7 @@
 		(start 79.928035 59.328035)
 		(end 79.928035 165.600024)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40080,7 +40080,7 @@
 		(start 68.425 51.425)
 		(end 66.175 53.675)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40091,7 +40091,7 @@
 		(start 55.6 45.85)
 		(end 56.800914 44.649086)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40136,7 +40136,7 @@
 		(start 51.700787 57.199213)
 		(end 61.925302 57.199213)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40147,7 +40147,7 @@
 		(start 42.15 109.95)
 		(end 45.5 109.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40158,7 +40158,7 @@
 		(start 50.8 53.7)
 		(end 47.4 57.1)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40203,7 +40203,7 @@
 		(start 80 56.95)
 		(end 81.85 58.8)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40214,7 +40214,7 @@
 		(start 87.85 130.05)
 		(end 84.5 130.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40225,7 +40225,7 @@
 		(start 84.45 190.05)
 		(end 79.149844 184.749844)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40236,7 +40236,7 @@
 		(start 53.05 50.45)
 		(end 51.9 51.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40247,7 +40247,7 @@
 		(start 45.6 189.95)
 		(end 50.900156 184.649844)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40258,7 +40258,7 @@
 		(start 78.05 124.399831)
 		(end 78.05 131.8)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40269,7 +40269,7 @@
 		(start 42.25 189.95)
 		(end 45.6 189.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40292,7 +40292,7 @@
 		(start 82.75 57.798864)
 		(end 82.75 60.001136)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40325,7 +40325,7 @@
 		(start 77.2 46.9)
 		(end 73.849627 43.549627)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40336,7 +40336,7 @@
 		(start 73.8 43.6)
 		(end 55.2 43.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40358,7 +40358,7 @@
 		(start 78.15 104.349831)
 		(end 78.15 111.75)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40369,7 +40369,7 @@
 		(start 53.95 52.7)
 		(end 50.4 52.7)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40391,7 +40391,7 @@
 		(start 47.4 57.1)
 		(end 47.4 108.150694)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40402,7 +40402,7 @@
 		(start 87.8 190.05)
 		(end 84.45 190.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40413,7 +40413,7 @@
 		(start 78.1 144.349831)
 		(end 78.1 151.75)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40424,7 +40424,7 @@
 		(start 77.2 49.45)
 		(end 84.675042 56.925042)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40458,7 +40458,7 @@
 		(start 45.4 56.3)
 		(end 45.4 69.912593)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40481,7 +40481,7 @@
 		(start 80.9 59.05)
 		(end 76.8 54.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40492,7 +40492,7 @@
 		(start 55.588392 51.111608)
 		(end 54.011608 52.688392)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40503,7 +40503,7 @@
 		(start 80.9 59.05)
 		(end 81 146.45)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40514,7 +40514,7 @@
 		(start 79.1 59.6)
 		(end 79.1 184.80016)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40525,7 +40525,7 @@
 		(start 87.95 90.05)
 		(end 84.6 90.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40536,7 +40536,7 @@
 		(start 42.1 149.95)
 		(end 45.45 149.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40559,7 +40559,7 @@
 		(start 77.949123 51.649123)
 		(end 83.65 57.35)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40570,7 +40570,7 @@
 		(start 42.15 169.95)
 		(end 45.5 169.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40593,7 +40593,7 @@
 		(start 50.112394 58.787606)
 		(end 51.700787 57.199213)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40616,7 +40616,7 @@
 		(start 81.85 59.9)
 		(end 81.85 127.45)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40649,7 +40649,7 @@
 		(start 42.1 89.95)
 		(end 45.45 89.95)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40660,7 +40660,7 @@
 		(start 49.15 58.35)
 		(end 49.15 146.350058)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40682,7 +40682,7 @@
 		(start 48.25 57.7)
 		(end 51.05 54.9)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40693,7 +40693,7 @@
 		(start 79.05 59.5)
 		(end 76.697874 57.147874)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40715,7 +40715,7 @@
 		(start 78.1 164.199831)
 		(end 78.1 171.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40737,7 +40737,7 @@
 		(start 74.65 46.9)
 		(end 72.324865 44.574865)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40759,7 +40759,7 @@
 		(start 48.25 58.125)
 		(end 48.25 127.350018)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40770,7 +40770,7 @@
 		(start 77.35 52.5)
 		(end 82.65 57.8)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40781,7 +40781,7 @@
 		(start 51 59.6)
 		(end 50.95 184.70016)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40803,7 +40803,7 @@
 		(start 51.9 51.6)
 		(end 50 51.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40825,7 +40825,7 @@
 		(start 72.15 46.9)
 		(end 73.35 48.1)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40836,7 +40836,7 @@
 		(start 45.45 89.95)
 		(end 46.33862 89.000002)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40858,7 +40858,7 @@
 		(start 45.55 129.95)
 		(end 48.175119 127.324881)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40869,7 +40869,7 @@
 		(start 68.8 48.1)
 		(end 68.3 48.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40880,7 +40880,7 @@
 		(start 84.55 110.05)
 		(end 82.847365 108.347365)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40902,7 +40902,7 @@
 		(start 84.6 150.05)
 		(end 81 146.45)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40913,7 +40913,7 @@
 		(start 88 70)
 		(end 84.65 70)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40924,7 +40924,7 @@
 		(start 72.15 49.4)
 		(end 70.85 48.1)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40935,7 +40935,7 @@
 		(start 73.35 51.5)
 		(end 77.851881 51.5)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40969,7 +40969,7 @@
 		(start 82.75 60)
 		(end 82.75 108.250645)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -40980,7 +40980,7 @@
 		(start 42.05 69.9)
 		(end 45.4 69.9)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41002,7 +41002,7 @@
 		(start 72.3 44.6)
 		(end 56.749734 44.6)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41013,7 +41013,7 @@
 		(start 87.95 150.05)
 		(end 84.6 150.05)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41024,7 +41024,7 @@
 		(start 79 58.4)
 		(end 79.928035 59.328035)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41035,7 +41035,7 @@
 		(start 66.15 53.7)
 		(end 50.8 53.7)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41058,7 +41058,7 @@
 		(start 45.5 169.95)
 		(end 49.878493 165.571507)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41069,7 +41069,7 @@
 		(start 50 51.6)
 		(end 45.4 56.3)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41080,7 +41080,7 @@
 		(start 84.5 130.05)
 		(end 81.874881 127.424881)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41113,7 +41113,7 @@
 		(start 50.4 52.7)
 		(end 46.449684 56.650316)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41124,7 +41124,7 @@
 		(start 81.85 58.8)
 		(end 81.85 59.9)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41157,7 +41157,7 @@
 		(start 46.4 56.65)
 		(end 46.4 89.00006)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41168,7 +41168,7 @@
 		(start 72.65 52.5)
 		(end 77.35 52.5)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41191,7 +41191,7 @@
 		(start 84.6 90.05)
 		(end 83.71138 89.100002)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41202,7 +41202,7 @@
 		(start 78.2 84.349831)
 		(end 78.2 91.75)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
@@ -41213,7 +41213,7 @@
 		(start 52.2 58.35)
 		(end 58.05 58.35)
 		(stroke
-			(width 0.5)
+			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
