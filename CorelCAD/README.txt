@@ -16,3 +16,6 @@ CorelCad:
    - Press 'Enter'
 
    - Export drawing to STL file
+
+   - ucs ... user coordinate system
+   - list ... list the properties of an entity
