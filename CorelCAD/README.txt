@@ -7,6 +7,10 @@ Corel Draw:
 
 CorelCad:
    - Import the Corel Draw image
+
+   - Enter 'units' and change to 'mm'
+   - Enter 'scale' and value 25.4 to convert 'inches' to 'mm'
+
    - Enter 'explodeX' ... required to be able to extrude splines/curves
    - Select all entities
    - extrude
@@ -14,6 +18,9 @@ CorelCad:
    - Enter 'T' to change the taper angle (verjuengungswinkel)
    - Enter value for hights
    - Press 'Enter'
+
+
+
 
    - Export drawing to STL file
 
