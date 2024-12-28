@@ -3,8 +3,8 @@ https://www.raspberrypi.com/documentation/
 Username: pi
 Password: &pegasus1&
 
-SSH Connection:
----------------
+(1) SSH Connection:
+-------------------
 ssh pi@10.0.0.50
 
 Update image:
@@ -14,8 +14,8 @@ sudo apt-get upgrade
 
 -----------------------------------------------------------------------
 
-VNC Server:
------------
+(2) VNC Server:
+---------------
 
 https://www.raspberrypi.org/documentation/remote-access/vnc/
 
@@ -83,3 +83,17 @@ TightVNCViewer
 &pegasus1&
 -----------------------------------------------------------------------
 
+(3) Install Python 3:
+---------------------
+
+https://www.hackster.io/sameerk/getting-started-with-raspberry-pi-zero-w-and-python-3-16c274
+
+Uninstall legacy Python:
+sudo apt-get update
+sudo apt-get remove python
+sudo apt autoremove
+
+Install Python 3
+sudo apt-get install python3
+sudo apt-get install python3-rpi.gpio
+sudo apt-get install python3-smbus
