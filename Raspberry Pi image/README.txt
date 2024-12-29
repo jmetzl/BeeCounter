@@ -97,3 +97,94 @@ Install Python 3
 sudo apt-get install python3
 sudo apt-get install python3-rpi.gpio
 sudo apt-get install python3-smbus
+
+
+(4) Install MotionEye:
+----------------------
+
+sudo apt-get install ffmpeg v4l-utils
+sudo apt-get install libmariadbclient18 libpq5
+
+wget https://github.com/Motion-Project/motion/releases/download/release-4.1.1/pi_stretch_motion_4.1.1-1_armhf.deb
+sudo dpkg -i pi_stretch_motion_4.1.1-1_armhf.deb
+apt-get install python-pip python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev
+------
+sudo apt-get install ffmpeg libmariadb3 libpq5 libmicrohttpd12 -y
+
+(5) OpenCV:
+-----------
+
+https://opencv.org/
+
+(6) Vagrant:
+------------
+
+(7) Ansible:
+------------
+
+(8) Docker image - MySQL:
+-------------------------
+https://medium.com/@yashpatel007/hosting-mysql-database-using-docker-on-raspberrypi-81810cfef63c
+
+sudo apt install docker.io
+docker --version
+
+sudo usermod -aG docker pi
+
+(9) Install nginx:
+------------------
+https://www.linode.com/docs/guides/flask-and-gunicorn-on-ubuntu/
+
+mkdir flask_project
+cd flask_project
+
+sudo apt-get install nginx
+sudo nano /etc/nginx/sites-enabled/flask_project
+
+----
+server {
+    listen 8081;
+    server_name 10.0.0.50;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+----
+
+ sudo unlink /etc/nginx/sites-enabled/default
+ sudo nginx -s reload
+
+
+(9) Install Apache Web-server:
+------------------------------
+sudo apt update
+sudo apt upgrade
+sudo apt update
+
+sudo chown -R pi:www-data /var/www/html/
+sudo chmod -R 770 /var/www/html/
+
+sudo apt install apache2
+
+wget -O check_apache.html http://127.0.0.1
+http://10.0.0.50/
+
+(9) Docker image - Tomcat:
+--------------------------
+https://putridparrot.com/blog/turning-my-raspberry-pi-zero-w-into-a-tomcat-server/
+
+sudo apt install docker.io
+docker --version
+
+sudo usermod -aG docker pi
+
+
+sudo docker pull izone/arm:tomcat
+docker run --rm --name Tomcat -h tomcat -e PASS="admin" -p 8080:8080 -ti izone/arm:tomcat
+http://10.0.0.50:8080/
+
+(9) Virtual Box:
+----------------
