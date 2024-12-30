@@ -17,6 +17,10 @@ CREATE DATABASE beecounterdb DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
+-- Open firewall port 3306
+vi /etc/mysql/mariadb.conf.d/50-server.cnf
+sudo systemctl restart mysql
+
 (2) Install PHP Admin GUI:
 --------------------------
 https://websonic.co.uk/blog/build-a-raspberry-pi-web-server-with-apache-php-and-mysql-at-home
