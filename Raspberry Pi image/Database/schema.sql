@@ -19,6 +19,18 @@
 CREATE DATABASE IF NOT EXISTS `beecounterdb` /*!40100 DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci */;
 USE `beecounterdb`;
 
+-- Exportiere Struktur von Tabelle beecounterdb.BEE_TRAFFIC
+CREATE TABLE IF NOT EXISTS `BEE_TRAFFIC` (
+  `BT_ID` int(11) NOT NULL,
+  `BT_LIGHT_BARRIER_CROSS_DATE_TIME` datetime NOT NULL,
+  `BT_LB_ID` int(11) NOT NULL,
+  PRIMARY KEY (`BT_ID`),
+  KEY `FK_LIGHT_BARRIERE` (`BT_LB_ID`),
+  CONSTRAINT `FK_LIGHT_BARRIERE` FOREIGN KEY (`BT_LB_ID`) REFERENCES `LIGHT_BARRIERE` (`LB_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
+
+-- Exportiere Daten aus Tabelle beecounterdb.BEE_TRAFFIC: ~0 rows (ungefähr)
+
 -- Exportiere Struktur von Tabelle beecounterdb.ENTRANCE
 CREATE TABLE IF NOT EXISTS `ENTRANCE` (
   `EN_ID` int(11) NOT NULL,
