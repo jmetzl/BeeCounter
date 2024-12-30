@@ -143,7 +143,7 @@ sudo nano /etc/nginx/sites-enabled/flask_project
 
 ----
 server {
-    listen 8081;
+    listen 80;
     server_name 10.0.0.50;
 
     location / {
@@ -154,11 +154,26 @@ server {
 }
 ----
 
- sudo unlink /etc/nginx/sites-enabled/default
- sudo nginx -s reload
+sudo unlink /etc/nginx/sites-enabled/default
+sudo nginx -s reload
+
+sudo systemctl start nginx
+sudo systemctl status nginx
+
+(11) Install DB:
+----------------
+sudo apt install python3-flask-sqlalchemy
+sudo apt install python3-sqlalchemy
+sudo apt install python3-flask-security
+sudo apt install python3-flask-wtf
+
+(12) Install gunicorn:
+----------------------
+sudo apt-get install gunicorn
+sudo gunicorn -w 3 flask_app:app
 
 
-(9) Install Apache Web-server:
+(13) Install Apache Web-server:
 ------------------------------
 sudo apt update
 sudo apt upgrade
@@ -172,7 +187,9 @@ sudo apt install apache2
 wget -O check_apache.html http://127.0.0.1
 http://10.0.0.50/
 
-(9) Docker image - Tomcat:
+/etc/init.d/apache2 stop
+
+(14) Docker image - Tomcat:
 --------------------------
 https://putridparrot.com/blog/turning-my-raspberry-pi-zero-w-into-a-tomcat-server/
 
@@ -186,5 +203,8 @@ sudo docker pull izone/arm:tomcat
 docker run --rm --name Tomcat -h tomcat -e PASS="admin" -p 8080:8080 -ti izone/arm:tomcat
 http://10.0.0.50:8080/
 
-(9) Virtual Box:
+(15) Virtual Box:
+----------------
+
+(16) Maria DB:
 ----------------
