@@ -9,6 +9,11 @@ sudo mysqld_safe --skip-grant-tables --skip-networking &
 
 FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '&pegasus1&';
+CREATE USER 'pi'@'localhost' IDENTIFIED BY '&pegasus1&';
+
+GRANT ALL PRIVILEGES ON beecounterdb.* TO 'pi'@'localhost' with grant option;
+GRANT SHOW DATABASES ON *.* TO 'pi'@'%' identified by '&pegasus1&' with grant option;
+GRANT ALL PRIVILEGES ON *.* TO 'pi'@'%' identified by '&pegasus1&' with grant option;
 
 sudo kill `cat /var/run/mysqld/mysqld.pid`
 sudo systemctl stop mysql
@@ -17,7 +22,7 @@ CREATE DATABASE beecounterdb DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
--- Open firewall port 3306
+-- Open port 3306 to public
 vi /etc/mysql/mariadb.conf.d/50-server.cnf
 sudo systemctl restart mysql
 
@@ -39,8 +44,9 @@ sudo apt install phpmyadmin -y
 sudo mysql
 GRANT SHOW DATABASES ON *.* TO 'phpmyadmin'@'localhost';
 GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost';
-GRANT SHOW DATABASES ON *.* TO 'phpmyadmin'@'%';
-GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'%';
+GRANT SHOW DATABASES ON *.* TO 'phpmyadmin'@'%' identified by '&pegasus1&' with grant option;
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'%' identified by '&pegasus1&' with grant option;
+
 FLUSH PRIVILEGES;
 
 http://10.0.0.50/phpmyadmin/
