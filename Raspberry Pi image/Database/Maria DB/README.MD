@@ -4,6 +4,9 @@ sudo apt update
 sudo apt upgrade
 sudo apt-get install mariadb-server
 
+sudo systemctl stop mysql
+
+
 
 https://github.com/MightyDetail/youtube/blob/main/Docker/mariadb/docker-compose.yml
 
