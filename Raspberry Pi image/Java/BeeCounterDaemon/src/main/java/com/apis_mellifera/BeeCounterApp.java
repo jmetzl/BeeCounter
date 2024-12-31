@@ -36,7 +36,7 @@ public class BeeCounterApp {
 		TypedQuery<LightBarrier> lightBarrierQuery = manager.createNamedQuery("LightBarrier.findByHeId", LightBarrier.class).setParameter("heId", "1");
 		List<LightBarrier> lightBarriers = lightBarrierQuery.getResultList();
 		System.out.println(String.format("%15s   %15s  %15s  %15s","Hive Entrance ID", "Light Barrier ID", "Type", "GPIO Port"));
-		System.out.println(String.format("%15s   %15s  %15s  %15s","------", "-----------", "-----------"));
+		System.out.println(String.format("%15s   %15s  %15s  %15s","------", "-----------", "-----------", "-----------"));
 		for (LightBarrier lightBarrier : lightBarriers) {
 			System.out.println(String.format("%15s   %15s  %15s  %15s",lightBarrier.getHeId(), lightBarrier.getId(), lightBarrier.getType(), lightBarrier.getGpioPort() ));
 		}
