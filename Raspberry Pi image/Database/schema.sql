@@ -27,20 +27,20 @@ CREATE TABLE IF NOT EXISTS `BEE_TRAFFIC` (
   PRIMARY KEY (`BT_ID`),
   KEY `FK_LIGHT_BARRIER` (`BT_LB_ID`),
   CONSTRAINT `FK_LIGHT_BARRIER` FOREIGN KEY (`BT_LB_ID`) REFERENCES `LIGHT_BARRIER` (`LB_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
 
 -- Exportiere Daten aus Tabelle beecounterdb.BEE_TRAFFIC: ~0 rows (ungefähr)
 
--- Exportiere Struktur von Tabelle beecounterdb.ENTRANCE
-CREATE TABLE IF NOT EXISTS `ENTRANCE` (
-  `EN_ID` int(11) NOT NULL,
-  `EN_NUMBER` int(11) NOT NULL,
-  `EN_NAME` text NOT NULL,
-  PRIMARY KEY (`EN_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+-- Exportiere Struktur von Tabelle beecounterdb.HIVE_ENTRANCE
+CREATE TABLE IF NOT EXISTS `HIVE_ENTRANCE` (
+  `HE_ID` int(11) NOT NULL,
+  `HE_NUMBER` int(11) NOT NULL,
+  `HE_NAME` text NOT NULL,
+  PRIMARY KEY (`HE_ID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores/enumerates the Beehive entrances';
 
--- Exportiere Daten aus Tabelle beecounterdb.ENTRANCE: ~6 rows (ungefähr)
-INSERT INTO `ENTRANCE` (`EN_ID`, `EN_NUMBER`, `EN_NAME`) VALUES
+-- Exportiere Daten aus Tabelle beecounterdb.HIVE_ENTRANCE: ~7 rows (ungefähr)
+INSERT INTO `HIVE_ENTRANCE` (`HE_ID`, `HE_NUMBER`, `HE_NAME`) VALUES
 	(1, 1, 'Entrance 1'),
 	(2, 2, 'Entrance 2'),
 	(3, 3, 'Entrance 3'),
@@ -54,14 +54,14 @@ CREATE TABLE IF NOT EXISTS `LIGHT_BARRIER` (
   `LB_ID` int(11) NOT NULL,
   `LB_TYPE` text NOT NULL,
   `LB_GPIO_PORT` int(11) NOT NULL,
-  `LB_EN_ID` int(11) NOT NULL,
+  `LB_HE_ID` int(11) NOT NULL,
   PRIMARY KEY (`LB_ID`),
-  KEY `FK_ENTRANCE_ID` (`LB_EN_ID`),
-  CONSTRAINT `FK_ENTRANCE_ID` FOREIGN KEY (`LB_EN_ID`) REFERENCES `ENTRANCE` (`EN_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  KEY `FK_ENTRANCE_ID` (`LB_HE_ID`) USING BTREE,
+  CONSTRAINT `FK_HIVE_ENTRANCE` FOREIGN KEY (`LB_HE_ID`) REFERENCES `HIVE_ENTRANCE` (`HE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores/enumerates the inner and outer light barriers that are associated to a beehive entrance';
 
 -- Exportiere Daten aus Tabelle beecounterdb.LIGHT_BARRIER: ~14 rows (ungefähr)
-INSERT INTO `LIGHT_BARRIER` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_EN_ID`) VALUES
+INSERT INTO `LIGHT_BARRIER` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_HE_ID`) VALUES
 	(1, 'INNER', 17, 1),
 	(2, 'OUTER', 18, 1),
 	(3, 'INNER', 27, 2),
