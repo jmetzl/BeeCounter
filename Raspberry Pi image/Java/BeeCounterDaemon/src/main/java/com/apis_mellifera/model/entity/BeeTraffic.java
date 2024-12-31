@@ -1,9 +1,6 @@
 package com.apis_mellifera.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,6 +8,10 @@ import java.util.Date;
  * Table stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name="BeeTraffic.findAll", query="SELECT bt FROM BeeTraffic bt"),
+        @NamedQuery(name="BeeTraffic.findByLbId", query="SELECT bt FROM BeeTraffic bt  WHERE bt.lbId LIKE :lbId")
+})
 @Table(name = "BEE_TRAFFIC")
 public class BeeTraffic implements Serializable {
 
@@ -18,44 +19,44 @@ public class BeeTraffic implements Serializable {
 
     @Id
     @Column(name = "BT_ID", nullable = false)
-    private Integer btId;
+    private Integer id;
 
     @Column(name = "BT_LIGHT_BARRIER_CROSS_DATE_TIME", nullable = false)
-    private Date btLightBarrierCrossDateTime;
+    private Date lightBarrierCrossDateTime;
 
     @Column(name = "BT_LB_ID", nullable = false)
-    private Integer btLbId;
+    private Integer lbId;
 
-    public void setBtId(Integer btId) {
-        this.btId = btId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getBtId() {
-        return btId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBtLightBarrierCrossDateTime(Date btLightBarrierCrossDateTime) {
-        this.btLightBarrierCrossDateTime = btLightBarrierCrossDateTime;
+    public void setLightBarrierCrossDateTime(Date lightBarrierCrossDateTime) {
+        this.lightBarrierCrossDateTime = lightBarrierCrossDateTime;
     }
 
-    public Date getBtLightBarrierCrossDateTime() {
-        return btLightBarrierCrossDateTime;
+    public Date getLightBarrierCrossDateTime() {
+        return lightBarrierCrossDateTime;
     }
 
-    public void setBtLbId(Integer btLbId) {
-        this.btLbId = btLbId;
+    public void setLbId(Integer lbId) {
+        this.lbId = lbId;
     }
 
-    public Integer getBtLbId() {
-        return btLbId;
+    public Integer getLbId() {
+        return lbId;
     }
 
     @Override
     public String toString() {
         return "BeeTraffic{" +
-                "btId=" + btId + '\'' +
-                "btLightBarrierCrossDateTime=" + btLightBarrierCrossDateTime + '\'' +
-                "btLbId=" + btLbId + '\'' +
+                "id=" + id + '\'' +
+                "lightBarrierCrossDateTime=" + lightBarrierCrossDateTime + '\'' +
+                "lbId=" + lbId + '\'' +
                 '}';
     }
 }

@@ -1,15 +1,16 @@
 package com.apis_mellifera.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Table stores/enumerates the Beehive entrances
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name="HiveEntrance.findAll", query="SELECT he FROM HiveEntrance he"),
+        @NamedQuery(name="HiveEntrance.findById", query="SELECT he FROM HiveEntrance he  WHERE he.id LIKE :id")
+})
 @Table(name = "HIVE_ENTRANCE")
 public class HiveEntrance implements Serializable {
 
@@ -17,44 +18,44 @@ public class HiveEntrance implements Serializable {
 
     @Id
     @Column(name = "HE_ID", nullable = false)
-    private Integer heId;
+    private Integer id;
 
     @Column(name = "HE_NUMBER", nullable = false)
-    private Integer heNumber;
+    private Integer number;
 
     @Column(name = "HE_NAME", nullable = false)
-    private String heName;
+    private String name;
 
-    public void setHeId(Integer heId) {
-        this.heId = heId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getHeId() {
-        return heId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setHeNumber(Integer heNumber) {
-        this.heNumber = heNumber;
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
-    public Integer getHeNumber() {
-        return heNumber;
+    public Integer getNumber() {
+        return number;
     }
 
-    public void setHeName(String heName) {
-        this.heName = heName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getHeName() {
-        return heName;
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString() {
         return "HiveEntrance{" +
-                "heId=" + heId + '\'' +
-                "heNumber=" + heNumber + '\'' +
-                "heName=" + heName + '\'' +
+                "id=" + id + '\'' +
+                "number=" + number + '\'' +
+                "name=" + name + '\'' +
                 '}';
     }
 }

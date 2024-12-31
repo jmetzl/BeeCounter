@@ -1,15 +1,16 @@
 package com.apis_mellifera.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Table stores/enumerates the inner and outer light barriers that are associated to a beehive entrance
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name="LightBarrier.findAll", query="SELECT lb FROM LightBarrier lb"),
+        @NamedQuery(name="LightBarrier.findByHeId", query="SELECT lb FROM LightBarrier lb  WHERE lb.heId LIKE :heId")
+})
 @Table(name = "LIGHT_BARRIER")
 public class LightBarrier implements Serializable {
 
@@ -17,56 +18,56 @@ public class LightBarrier implements Serializable {
 
     @Id
     @Column(name = "LB_ID", nullable = false)
-    private Integer lbId;
+    private Integer id;
 
     @Column(name = "LB_GPIO_PORT", nullable = false)
-    private Integer lbGpioPort;
+    private Integer gpioPort;
 
     @Column(name = "LB_HE_ID", nullable = false)
-    private Integer lbHeId;
+    private Integer heId;
 
     @Column(name = "LB_TYPE", nullable = false)
-    private String lbType;
+    private String type;
 
-    public void setLbId(Integer lbId) {
-        this.lbId = lbId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getLbId() {
-        return lbId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setLbGpioPort(Integer lbGpioPort) {
-        this.lbGpioPort = lbGpioPort;
+    public void setGpioPort(Integer gpioPort) {
+        this.gpioPort = gpioPort;
     }
 
-    public Integer getLbGpioPort() {
-        return lbGpioPort;
+    public Integer getGpioPort() {
+        return gpioPort;
     }
 
-    public void setLbHeId(Integer lbHeId) {
-        this.lbHeId = lbHeId;
+    public void setHeId(Integer heId) {
+        this.heId = heId;
     }
 
-    public Integer getLbHeId() {
-        return lbHeId;
+    public Integer getHeId() {
+        return heId;
     }
 
-    public void setLbType(String lbType) {
-        this.lbType = lbType;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getLbType() {
-        return lbType;
+    public String getType() {
+        return type;
     }
 
     @Override
     public String toString() {
         return "LightBarrier{" +
-                "lbId=" + lbId + '\'' +
-                "lbGpioPort=" + lbGpioPort + '\'' +
-                "lbHeId=" + lbHeId + '\'' +
-                "lbType=" + lbType + '\'' +
+                "id=" + id + '\'' +
+                "gpioPort=" + gpioPort + '\'' +
+                "heId=" + heId + '\'' +
+                "type=" + type + '\'' +
                 '}';
     }
 }
