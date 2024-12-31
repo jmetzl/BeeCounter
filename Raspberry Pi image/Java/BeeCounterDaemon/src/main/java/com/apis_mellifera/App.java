@@ -3,6 +3,8 @@ package com.apis_mellifera;
 
 import com.apis_mellifera.model.Dept;
 import com.apis_mellifera.model.Emp;
+import org.eclipse.persistence.jpa.PersistenceProvider;
+
 
 import java.util.List;
 
@@ -11,6 +13,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+
 
 
 /**
@@ -22,7 +25,8 @@ import javax.persistence.TypedQuery;
  */
 public class App {
 	public static void main(String[] args) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("OracleATPD");
+		PersistenceProvider provider = new PersistenceProvider();
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
 		EntityManager manager = factory.createEntityManager();
 
 		EntityTransaction tx = manager.getTransaction();
