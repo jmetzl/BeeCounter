@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `BEE_TRAFFIC` (
   `BT_LIGHT_BARRIER_CROSS_DATE_TIME` datetime NOT NULL,
   `BT_LB_ID` int(11) NOT NULL,
   PRIMARY KEY (`BT_ID`),
-  KEY `FK_LIGHT_BARRIERE` (`BT_LB_ID`),
-  CONSTRAINT `FK_LIGHT_BARRIERE` FOREIGN KEY (`BT_LB_ID`) REFERENCES `LIGHT_BARRIERE` (`LB_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_LIGHT_BARRIER` (`BT_LB_ID`),
+  CONSTRAINT `FK_LIGHT_BARRIER` FOREIGN KEY (`BT_LB_ID`) REFERENCES `LIGHT_BARRIER` (`LB_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
 
 -- Exportiere Daten aus Tabelle beecounterdb.BEE_TRAFFIC: ~0 rows (ungefähr)
@@ -49,8 +49,8 @@ INSERT INTO `ENTRANCE` (`EN_ID`, `EN_NUMBER`, `EN_NAME`) VALUES
 	(6, 6, 'Entrance 6'),
 	(7, 7, 'Entrance 7');
 
--- Exportiere Struktur von Tabelle beecounterdb.LIGHT_BARRIERE
-CREATE TABLE IF NOT EXISTS `LIGHT_BARRIERE` (
+-- Exportiere Struktur von Tabelle beecounterdb.LIGHT_BARRIER
+CREATE TABLE IF NOT EXISTS `LIGHT_BARRIER` (
   `LB_ID` int(11) NOT NULL,
   `LB_TYPE` text NOT NULL,
   `LB_GPIO_PORT` int(11) NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE IF NOT EXISTS `LIGHT_BARRIERE` (
   CONSTRAINT `FK_ENTRANCE_ID` FOREIGN KEY (`LB_EN_ID`) REFERENCES `ENTRANCE` (`EN_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Exportiere Daten aus Tabelle beecounterdb.LIGHT_BARRIERE: ~14 rows (ungefähr)
-INSERT INTO `LIGHT_BARRIERE` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_EN_ID`) VALUES
+-- Exportiere Daten aus Tabelle beecounterdb.LIGHT_BARRIER: ~14 rows (ungefähr)
+INSERT INTO `LIGHT_BARRIER` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_EN_ID`) VALUES
 	(1, 'INNER', 17, 1),
 	(2, 'OUTER', 18, 1),
 	(3, 'INNER', 27, 2),
