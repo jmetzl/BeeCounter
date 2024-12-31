@@ -1,7 +1,10 @@
 package com.apis_mellifera.model.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 import java.io.Serializable;
+
 
 /**
  * Table stores/enumerates the Beehive entrances

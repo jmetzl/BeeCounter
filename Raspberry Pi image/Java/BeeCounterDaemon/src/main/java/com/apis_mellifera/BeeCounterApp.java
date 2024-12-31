@@ -1,20 +1,11 @@
 /* Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.*/
 package com.apis_mellifera;
 
-import com.apis_mellifera.model.Dept;
-import com.apis_mellifera.model.Emp;
-import org.eclipse.persistence.jpa.PersistenceProvider;
 
-
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-
-
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
 
 /**
  * Maven archetype for generating a JPA application.
@@ -23,16 +14,16 @@ import javax.persistence.TypedQuery;
  * to create the tables "emp" and "dept" required for this sample. 
  * @author Nirmala Sundarappa
  */
-public class App {
+public class BeeCounterApp {
 	public static void main(String[] args) {
-		PersistenceProvider provider = new PersistenceProvider();
+		//PersistenceProvider provider = new PersistenceProvider();
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
 		EntityManager manager = factory.createEntityManager();
 
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 
-		TypedQuery<Emp> empQuery = manager.createNamedQuery("Emp.findAll", Emp.class);
+		/*TypedQuery<Emp> empQuery = manager.createNamedQuery("Emp.findAll", Emp.class);
 		List<Emp> emps = empQuery.getResultList();
 		System.out.println(String.format("%6s   %15s  %15s","EMPNO", "ENAME", "JOB"));
 		System.out.println(String.format("%6s   %15s  %15s","------", "-----------", "-----------"));
@@ -71,7 +62,7 @@ public class App {
 		}
 		// we did not do anything so rollback
 		// Commit if you have any DML operations
-		tx.rollback();
+		tx.rollback(); */
 
 		System.out.println(".. done");
 

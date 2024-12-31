@@ -10,10 +10,10 @@
 		<class>com.apis_mellifera.model.entity.BeeTraffic</class>
 
 		<properties> <!-- MariaDB database connection settings -->
-			<property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/beecounterdb"/>
-			<property name="javax.persistence.jdbc.user" value="pi"/>
-			<property name="javax.persistence.jdbc.password" value="&amp;pegasus1&amp;"/>
+			<property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://10.0.0.50:3306/beecounterdb"/>
+			<property name="jakarta.persistence.jdbc.user" value="pi"/>
+			<property name="jakarta.persistence.jdbc.password" value="&amp;pegasus1&amp;"/>
 			<!-- EclipseLink specific properties -->
 			<property name="eclipselink.logging.level" value="FINEST"/>
 			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
