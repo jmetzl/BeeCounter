@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="b03ac8d6-13d7-44d7-9cb8-9071ae36d3e9" name="BeeCounter" url="jdbc:mariadb://10.0.0.50:3306/beecounterdb?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="org.mariadb.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>
