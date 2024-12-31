@@ -206,5 +206,8 @@ http://10.0.0.50:8080/
 (15) Virtual Box:
 ----------------
 
-(16) Maria DB:
-----------------
+(16) Open JDK 17:
+-----------------
+sudo apt-cache search jdk
+sudo apt-get install openjdk-17-jdk
+java --version
