@@ -2,10 +2,11 @@
 package com.apis_mellifera;
 
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import com.apis_mellifera.model.entity.HiveEntrance;
+import com.apis_mellifera.model.entity.LightBarrier;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 /**
  * Maven archetype for generating a JPA application.
@@ -23,23 +24,23 @@ public class BeeCounterApp {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 
-		/*TypedQuery<Emp> empQuery = manager.createNamedQuery("Emp.findAll", Emp.class);
-		List<Emp> emps = empQuery.getResultList();
-		System.out.println(String.format("%6s   %15s  %15s","EMPNO", "ENAME", "JOB"));
-		System.out.println(String.format("%6s   %15s  %15s","------", "-----------", "-----------"));
-		for (Emp emp : emps) {
-			System.out.println(String.format("%6s   %15s  %15s",emp.getEmpno(), emp.getEname(), emp.getJob()));
+		TypedQuery<HiveEntrance> hiveEntranceQuery = manager.createNamedQuery("HiveEntrance.findAll", HiveEntrance.class);
+		List<HiveEntrance> hiveEntrances = hiveEntranceQuery.getResultList();
+		System.out.println(String.format("%6s   %18s  %15s","ID", "Hive Entrance Name", "Number"));
+		System.out.println(String.format("%6s   %18s  %15s","------", "------------------", "-----------"));
+		for (HiveEntrance hiveEntrance : hiveEntrances) {
+			System.out.println(String.format("%6s   %18s  %15s",hiveEntrance.getId(), hiveEntrance.getName(), hiveEntrance.getNumber()));
 		}
 
-		System.out.println("\nPrinting the list of Managers:");
-		empQuery = manager.createNamedQuery("Emp.findByJob", Emp.class).setParameter("job", "MANAGER");
-		emps = empQuery.getResultList();
-		System.out.println(String.format("%6s   %15s  %15s","EMPNO", "ENAME", "JOB"));
-		System.out.println(String.format("%6s   %15s  %15s","------", "-----------", "-----------"));
-		for (Emp emp : emps) {
-			System.out.println(String.format("%6s   %15s  %15s",emp.getEmpno(), emp.getEname(), emp.getJob()));
+		System.out.println("\nPrinting the list of Light barriers:");
+		TypedQuery<LightBarrier> lightBarrierQuery = manager.createNamedQuery("LightBarrier.findByHeId", LightBarrier.class).setParameter("heId", "1");
+		List<LightBarrier> lightBarriers = lightBarrierQuery.getResultList();
+		System.out.println(String.format("%15s   %15s  %15s  %15s","Hive Entrance ID", "Light Barrier ID", "Type", "GPIO Port"));
+		System.out.println(String.format("%15s   %15s  %15s  %15s","------", "-----------", "-----------"));
+		for (LightBarrier lightBarrier : lightBarriers) {
+			System.out.println(String.format("%15s   %15s  %15s  %15s",lightBarrier.getHeId(), lightBarrier.getId(), lightBarrier.getType(), lightBarrier.getGpioPort() ));
 		}
-
+        /*
 		System.out.println("\nPrinting the list of Departments:");
 		TypedQuery<Dept> deptQuery = manager.createNamedQuery("Dept.findAll", Dept.class);
 		List<Dept> depts = deptQuery.getResultList();
