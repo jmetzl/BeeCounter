@@ -50,6 +50,6 @@ public class BeeCounterApp {
 		for (BeeTraffic beeTraffic : beeTrafficList) {
 			System.out.println(String.format("%15s   %15s  %15s",beeTraffic.getId(), beeTraffic.getLbId(), beeTraffic.getLightBarrierCrossDateTime()));
 		}
-
+		tx.rollback();
 	}
 }
