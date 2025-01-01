@@ -4,8 +4,10 @@ import com.apis_mellifera.model.entity.BeeTraffic;
 import com.apis_mellifera.model.entity.HiveEntrance;
 import com.apis_mellifera.model.entity.LightBarrier;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 
+import java.util.Date;
 import java.util.List;
 
 public class BusinessServiceImpl implements IBusinessService {
@@ -30,4 +32,5 @@ public class BusinessServiceImpl implements IBusinessService {
         List<BeeTraffic> beeTrafficList = beeTraficQuery.getResultList();
         return beeTrafficList;
     }
+
 }

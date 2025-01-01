@@ -2,15 +2,13 @@ package com.apis_mellifera;
 
 
 import com.apis_mellifera.businessservice.BusinessServiceImpl;
-import com.apis_mellifera.model.entity.BeeTraffic;
+import com.apis_mellifera.listener.CustomDigitalStateChangeListener;
 import com.apis_mellifera.model.entity.LightBarrier;
 import com.pi4j.Pi4J;
 import com.pi4j.context.Context;
 import com.pi4j.io.gpio.digital.*;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -25,28 +23,16 @@ public class BeeCounterApp {
         List<LightBarrier> lightBarriers = businessService.getAllLightBarriers(entityManager);
 
         // Store a Light Barrier Cross event for each of the Light Barriers
-        for (LightBarrier lightBarrier : lightBarriers) {
-            storeLightBarrierCrossEvent(entityManager, lightBarrier.getId());
-        }
+        /* for (LightBarrier lightBarrier : lightBarriers) {
+            businessService.storeLightBarrierCrossEvent(entityManager, lightBarrier.getId());
+        } */
 
-        //initializeGpioPortforLightBarriers(lightBarriers);
-
-
+        initializeGpioPortforLightBarriers(entityManager,lightBarriers);
     }
 
-    private static void storeLightBarrierCrossEvent(EntityManager entityManagerIn, Integer lightBarrierIdIn) {
-        EntityTransaction tx = entityManagerIn.getTransaction();
-        tx.begin();
 
-        BeeTraffic beeTraffic = new BeeTraffic();
-        beeTraffic.setLbId(lightBarrierIdIn);
-        Date lightBarrierCrossDateTime = new Date();
-        beeTraffic.setLightBarrierCrossDateTime(lightBarrierCrossDateTime);
-        entityManagerIn.persist(beeTraffic);
-        tx.commit();
-    }
 
-    private static void initializeGpioPortforLightBarriers(List<LightBarrier> lightBarriers) {
+    private static void initializeGpioPortforLightBarriers(EntityManager entityManagerIn, List<LightBarrier> lightBarriers) {
         // Initialize Pi4J with an auto context
         // An auto context includes AUTO-DETECT BINDINGS enabled
         // which will load all detected Pi4J extension libraries
@@ -70,16 +56,10 @@ public class BeeCounterApp {
                     .build();
 
             DigitalInput input = pi4j.din().create(config);
-            input.addListener(new DigitalStateChangeListener() {
-                @Override
-                public void onDigitalStateChange(DigitalStateChangeEvent event) {
-
-                    System.out.println("DIGITAL INPUT [");
-                    System.out.println(event.source());
-                    System.out.println("] STATE CHANGE: ");
-                    //System.out.println(event.state());
-                }
-            });
+            input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
+        }
+        while (true) {
+            // Endless loop while waiting for Light Barrier Cross events
         }
     }
 }
