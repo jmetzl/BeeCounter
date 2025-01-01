@@ -2,6 +2,7 @@
 package com.apis_mellifera;
 
 
+import com.apis_mellifera.model.entity.BeeTraffic;
 import com.apis_mellifera.model.entity.HiveEntrance;
 import com.apis_mellifera.model.entity.LightBarrier;
 import jakarta.persistence.*;
@@ -40,32 +41,15 @@ public class BeeCounterApp {
 		for (LightBarrier lightBarrier : lightBarriers) {
 			System.out.println(String.format("%15s   %15s  %15s  %15s",lightBarrier.getHeId(), lightBarrier.getId(), lightBarrier.getType(), lightBarrier.getGpioPort() ));
 		}
-        /*
-		System.out.println("\nPrinting the list of Departments:");
-		TypedQuery<Dept> deptQuery = manager.createNamedQuery("Dept.findAll", Dept.class);
-		List<Dept> depts = deptQuery.getResultList();
-		System.out.println(String.format("%6s   %15s  %15s","DEPTNO", "DNAME", "LOC"));
-		System.out.println(String.format("%6s   %15s  %15s","------", "-----------", "-----------"));
 
-		for (Dept dept : depts) {
-			System.out.println(String.format("%6s   %15s  %15s", dept.getDeptno(), dept.getDname(), dept.getLoc()));
+		System.out.println("\nPrinting the list of BeeTraffic:");
+		TypedQuery<BeeTraffic> beeTraficQuery = manager.createNamedQuery("BeeTraffic.findAll", BeeTraffic.class);
+		List<BeeTraffic> beeTrafficList = beeTraficQuery.getResultList();
+		System.out.println(String.format("%15s   %15s  %15s","Hive Entrance ID", "Light Barrier ID", "Type"));
+		System.out.println(String.format("%15s   %15s  %15s","------", "-----------", "-----------"));
+		for (BeeTraffic beeTraffic : beeTrafficList) {
+			System.out.println(String.format("%15s   %15s  %15s",beeTraffic.getId(), beeTraffic.getLbId(), beeTraffic.getLightBarrierCrossDateTime()));
 		}
-		
-		
-		System.out.println("\nPrinting the list of Employees in ACCONTING dept:");
-		empQuery = manager.createNamedQuery("Dept.findEmpByDept", Emp.class)
-				.setParameter("dname", "ACCOUNTING");
-		emps = empQuery.getResultList();
-		System.out.println(String.format("%6s   %15s  %15s","EMPNO", "ENAME", "JOB"));
-		System.out.println(String.format("%6s   %15s  %15s","------", "-----------", "-----------"));
-		for (Emp emp : emps) {
-			System.out.println(String.format("%6s   %15s  %15s", emp.getEmpno(), emp.getEname(), emp.getJob()));
-		}
-		// we did not do anything so rollback
-		// Commit if you have any DML operations
-		tx.rollback(); */
-
-		System.out.println(".. done");
 
 	}
 }
