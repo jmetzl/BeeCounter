@@ -11,8 +11,11 @@
   <!-- Update this to the JDK version that you want to use -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <!-- JAVA COMPILER VERSIONS -->
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <pi4j.version>2.7.0</pi4j.version>
   </properties>
 
 
@@ -44,21 +47,29 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.pi4j/pi4j-core -->
+    <!-- include Pi4J Core -->
     <dependency>
       <groupId>com.pi4j</groupId>
       <artifactId>pi4j-core</artifactId>
-      <version>2.7.0</version>
+      <version>${pi4j.version}</version>
     </dependency>
 
+    <!-- include Pi4J Plugins (Platforms and I/O Providers) -->
     <dependency>
       <groupId>com.pi4j</groupId>
       <artifactId>pi4j-plugin-raspberrypi</artifactId>
-      <version>2.7.0</version>
+      <version>${pi4j.version}</version>
     </dependency>
     <dependency>
       <groupId>com.pi4j</groupId>
-      <artifactId>pi4j-plugin-pigpio</artifactId>
-      <version>2.7.0</version>
+      <artifactId>pi4j-plugin-gpiod</artifactId>
+      <version>${pi4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.16</version>
     </dependency>
 
     <dependency>
@@ -84,6 +95,12 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <release>${java.version}</release>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+            <verbose>false</verbose>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

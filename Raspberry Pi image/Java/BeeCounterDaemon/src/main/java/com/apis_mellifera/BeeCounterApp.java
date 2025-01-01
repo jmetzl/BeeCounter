@@ -5,8 +5,10 @@ import com.apis_mellifera.businessservice.BusinessServiceImpl;
 import com.apis_mellifera.listener.CustomDigitalStateChangeListener;
 import com.apis_mellifera.model.entity.LightBarrier;
 import com.pi4j.Pi4J;
+import com.pi4j.boardinfo.util.BoardInfoHelper;
 import com.pi4j.context.Context;
 import com.pi4j.io.gpio.digital.*;
+import com.pi4j.util.Console;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -33,14 +35,38 @@ public class BeeCounterApp {
 
 
     private static void initializeGpioPortforLightBarriers(EntityManager entityManagerIn, List<LightBarrier> lightBarriers) {
-        // Initialize Pi4J with an auto context
-        // An auto context includes AUTO-DETECT BINDINGS enabled
-        // which will load all detected Pi4J extension libraries
-        // (Platforms and Providers) in the class path
+        final var console = new Console();
+        console.title("<-- The Pi4J Project -->", "BeeCounter project");
+
+        // ------------------------------------------------------------
+        // Initialize the Pi4J Runtime Context
+        // ------------------------------------------------------------
         Context pi4j = Pi4J.newAutoContext();
-        System.setProperty("pi4j.host", "10.0.0.50");
-        // get a Digital Input I/O provider from the Pi4J context
-        DigitalInputProvider digitalInputProvider = pi4j.provider("pigpio-digital-input");
+
+        // ------------------------------------------------------------
+        // Output Pi4J Context information
+        // ------------------------------------------------------------
+        // PrintInfo.printLoadedPlatforms(console, pi4j);
+        //PrintInfo.printDefaultPlatform(console, pi4j);
+        PrintInfo.printProviders(console, pi4j);
+
+        // ------------------------------------------------------------
+        // Output Pi4J Board information
+        // ------------------------------------------------------------
+        // console.println("Board model: " + pi4j.boardInfo().getBoardModel().getLabel());
+        console.println("Operating system: " + pi4j.boardInfo().getOperatingSystem());
+        console.println("Java versions: " + pi4j.boardInfo().getJavaInfo());
+        // This info is also available directly from the BoardInfoHelper,
+        // and with some additional realtime data.
+        // console.println("Board model: " + BoardInfoHelper.current().getBoardModel().getLabel());
+        console.println("Raspberry Pi model with RP1 chip (Raspberry Pi 5): " + BoardInfoHelper.usesRP1());
+        console.println("OS is 64-bit: " + BoardInfoHelper.is64bit());
+        console.println("JVM memory used (MB): " + BoardInfoHelper.getJvmMemory().getUsedInMb());
+        console.println("Board temperature (°C): " + BoardInfoHelper.getBoardReading().getTemperatureInCelsius());
+
+        PrintInfo.printRegistry(console, pi4j);
+
+        // System.setProperty("pi4j.host", "10.0.0.50");
 
         for (LightBarrier lightBarrier : lightBarriers) {
 
@@ -50,16 +76,19 @@ public class BeeCounterApp {
             properties.put("address", lightBarrier.getGpioPort());
             properties.put("pull", "UP");
             properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
-
+            System.out.println("Debug point 1");
             DigitalInputConfig config = DigitalInput.newConfigBuilder(pi4j)
                     .load(properties)
                     .build();
-
+            System.out.println("Debug point 2");
             DigitalInput input = pi4j.din().create(config);
-            input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
+            System.out.println("Debug point 3");
+            //input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
         }
         while (true) {
             // Endless loop while waiting for Light Barrier Cross events
         }
+        // Shutdown Pi4J
+        //pi4j.shutdown();
     }
 }
