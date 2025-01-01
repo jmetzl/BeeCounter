@@ -2,12 +2,15 @@ package com.apis_mellifera;
 
 
 import com.apis_mellifera.businessservice.BusinessServiceImpl;
+import com.apis_mellifera.model.entity.BeeTraffic;
 import com.apis_mellifera.model.entity.LightBarrier;
 import com.pi4j.Pi4J;
 import com.pi4j.context.Context;
 import com.pi4j.io.gpio.digital.*;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -17,16 +20,30 @@ public class BeeCounterApp {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
         EntityManager entityManager = factory.createEntityManager();
 
-        EntityTransaction tx = entityManager.getTransaction();
-        tx.begin();
-
         // Retrieve all Light Barriers
         BusinessServiceImpl businessService = new BusinessServiceImpl();
         List<LightBarrier> lightBarriers = businessService.getAllLightBarriers(entityManager);
 
-        initializeGpioPortforLightBarriers(lightBarriers);
+        // Store a Light Barrier Cross event for each of the Light Barriers
+        for (LightBarrier lightBarrier : lightBarriers) {
+            storeLightBarrierCrossEvent(entityManager, lightBarrier.getId());
+        }
 
-        tx.rollback();
+        //initializeGpioPortforLightBarriers(lightBarriers);
+
+
+    }
+
+    private static void storeLightBarrierCrossEvent(EntityManager entityManagerIn, Integer lightBarrierIdIn) {
+        EntityTransaction tx = entityManagerIn.getTransaction();
+        tx.begin();
+
+        BeeTraffic beeTraffic = new BeeTraffic();
+        beeTraffic.setLbId(lightBarrierIdIn);
+        Date lightBarrierCrossDateTime = new Date();
+        beeTraffic.setLightBarrierCrossDateTime(lightBarrierCrossDateTime);
+        entityManagerIn.persist(beeTraffic);
+        tx.commit();
     }
 
     private static void initializeGpioPortforLightBarriers(List<LightBarrier> lightBarriers) {

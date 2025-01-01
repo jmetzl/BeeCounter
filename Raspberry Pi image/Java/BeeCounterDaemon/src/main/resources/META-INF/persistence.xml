@@ -15,7 +15,7 @@
 			<property name="jakarta.persistence.jdbc.user" value="pi"/>
 			<property name="jakarta.persistence.jdbc.password" value="&amp;pegasus1&amp;"/>
 			<!-- EclipseLink specific properties -->
-			<property name="eclipselink.logging.level" value="FINEST"/>
+			<property name="eclipselink.logging.level" value="FINE"/>
 			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
 		</properties>
 	</persistence-unit>

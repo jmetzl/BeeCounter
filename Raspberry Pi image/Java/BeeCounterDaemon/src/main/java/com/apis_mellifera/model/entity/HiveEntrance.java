@@ -19,6 +19,7 @@ public class HiveEntrance implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+
     @Id
     @Column(name = "HE_ID", nullable = false)
     private Integer id;

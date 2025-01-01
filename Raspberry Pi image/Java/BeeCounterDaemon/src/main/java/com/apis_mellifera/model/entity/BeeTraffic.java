@@ -19,8 +19,11 @@ public class BeeTraffic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+
     @Id
-    @Column(name = "BT_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my_sequence_generator")
+    @SequenceGenerator(name = "my_sequence_generator", sequenceName = "BEE_TRAFFIC_S", allocationSize = 1)
+    @Column(name = "BT_ID")
     private Integer id;
 
     @Column(name = "BT_LIGHT_BARRIER_CROSS_DATE_TIME", nullable = false)
