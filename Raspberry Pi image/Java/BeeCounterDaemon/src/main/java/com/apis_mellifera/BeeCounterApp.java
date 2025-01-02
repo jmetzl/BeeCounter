@@ -58,7 +58,7 @@ public class BeeCounterApp {
         console.println("Java versions: " + pi4j.boardInfo().getJavaInfo());
         // This info is also available directly from the BoardInfoHelper,
         // and with some additional realtime data.
-        // console.println("Board model: " + BoardInfoHelper.current().getBoardModel().getLabel());
+        //console.println("Board model: " + BoardInfoHelper.current().getBoardModel().getLabel());
         console.println("Raspberry Pi model with RP1 chip (Raspberry Pi 5): " + BoardInfoHelper.usesRP1());
         console.println("OS is 64-bit: " + BoardInfoHelper.is64bit());
         console.println("JVM memory used (MB): " + BoardInfoHelper.getJvmMemory().getUsedInMb());
@@ -67,13 +67,15 @@ public class BeeCounterApp {
         PrintInfo.printRegistry(console, pi4j);
 
         // System.setProperty("pi4j.host", "10.0.0.50");
+        // Create GPIO controller instance final GpioController gpio = GpioFactory.getInstance();
+        //final GpioControlle gpio = GpioFactor.getInstance();
 
         for (LightBarrier lightBarrier : lightBarriers) {
 
             System.out.println("Initializing digital input for ".concat(lightBarrier.getType()).concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString())).concat(") on GPIO port ").concat(lightBarrier.getGpioPort().toString()));
             Properties properties = new Properties();
             properties.put("id", lightBarrier.getId().toString());
-            properties.put("address", lightBarrier.getGpioPort());
+            properties.put("address", lightBarrier.getGpioPin());
             properties.put("pull", "UP");
             properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
             DigitalInputConfig config = DigitalInput.newConfigBuilder(pi4j)
