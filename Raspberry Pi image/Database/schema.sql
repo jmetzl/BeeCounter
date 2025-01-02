@@ -23,13 +23,13 @@ USE `beecounterdb`;
 CREATE TABLE IF NOT EXISTS `BEE_TRAFFIC` (
   `BT_LIGHT_BARRIER_CROSS_DATE_TIME` datetime NOT NULL,
   `BT_LB_ID` int(11) NOT NULL,
-  `BT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `BT_ID` int(11) NOT NULL DEFAULT nextval(`beecounterdb`.`BEE_TRAFFIC_S`),
   PRIMARY KEY (`BT_ID`),
   KEY `FK_LIGHT_BARRIER` (`BT_LB_ID`),
   CONSTRAINT `FK_LIGHT_BARRIER` FOREIGN KEY (`BT_LB_ID`) REFERENCES `LIGHT_BARRIER` (`LB_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores the date/time of a bee passing a light barrier when arrive/departure to/from a beehive.';
 
--- Exportiere Daten aus Tabelle beecounterdb.BEE_TRAFFIC: ~0 rows (ungefähr)
+-- Exportiere Daten aus Tabelle beecounterdb.BEE_TRAFFIC: ~2 rows (ungefähr)
 
 -- Exportiere Struktur von Tabelle beecounterdb.BEE_TRAFFIC_S
 CREATE TABLE IF NOT EXISTS `BEE_TRAFFIC_S` (
@@ -87,27 +87,28 @@ CREATE TABLE IF NOT EXISTS `LIGHT_BARRIER` (
   `LB_TYPE` text NOT NULL,
   `LB_GPIO_PORT` int(11) NOT NULL,
   `LB_HE_ID` int(11) NOT NULL,
+  `LB_GPIO_PIN` int(11) NOT NULL,
   PRIMARY KEY (`LB_ID`) USING BTREE,
   KEY `FK_ENTRANCE_ID` (`LB_HE_ID`) USING BTREE,
   CONSTRAINT `FK_HIVE_ENTRANCE` FOREIGN KEY (`LB_HE_ID`) REFERENCES `HIVE_ENTRANCE` (`HE_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci COMMENT='Table stores/enumerates the inner and outer light barriers that are associated to a beehive entrance';
 
 -- Exportiere Daten aus Tabelle beecounterdb.LIGHT_BARRIER: ~14 rows (ungefähr)
-INSERT INTO `LIGHT_BARRIER` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_HE_ID`) VALUES
-	(1, 'INNER', 17, 1),
-	(2, 'OUTER', 18, 1),
-	(3, 'INNER', 27, 2),
-	(4, 'OUTER', 22, 2),
-	(5, 'INNER', 23, 3),
-	(6, 'OUTER', 24, 3),
-	(7, 'INNER', 25, 4),
-	(8, 'OUTER', 4, 4),
-	(9, 'INNER', 14, 5),
-	(10, 'OUTER', 555, 5),
-	(11, 'INNER', 8, 6),
-	(12, 'OUTER', 7, 6),
-	(13, 'INNER', 10, 7),
-	(14, 'OUTER', 9, 7);
+INSERT INTO `LIGHT_BARRIER` (`LB_ID`, `LB_TYPE`, `LB_GPIO_PORT`, `LB_HE_ID`, `LB_GPIO_PIN`) VALUES
+	(1, 'INNER', 17, 1, 12),
+	(2, 'OUTER', 18, 1, 18),
+	(3, 'INNER', 27, 2, 13),
+	(4, 'OUTER', 22, 2, 15),
+	(5, 'INNER', 23, 3, 16),
+	(6, 'OUTER', 24, 3, 18),
+	(7, 'INNER', 25, 4, 22),
+	(8, 'OUTER', 4, 4, 7),
+	(9, 'INNER', 14, 5, 8),
+	(10, 'OUTER', 555, 5, 555),
+	(11, 'INNER', 8, 6, 24),
+	(12, 'OUTER', 7, 6, 26),
+	(13, 'INNER', 10, 7, 19),
+	(14, 'OUTER', 9, 7, 21);
 
 -- Exportiere Struktur von Tabelle beecounterdb.LIGHT_BARRIER_S
 CREATE TABLE IF NOT EXISTS `LIGHT_BARRIER_S` (
@@ -132,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `SEQUENCE` (
   PRIMARY KEY (`SEQ_NAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Exportiere Daten aus Tabelle beecounterdb.SEQUENCE: ~3 rows (ungefähr)
+-- Exportiere Daten aus Tabelle beecounterdb.SEQUENCE: ~2 rows (ungefähr)
 INSERT INTO `SEQUENCE` (`SEQ_NAME`, `SEQ_COUNT`) VALUES
 	('BEE_TRAFFIC_S', 1),
 	('HIVE_ENTRANCE_S', 8),
