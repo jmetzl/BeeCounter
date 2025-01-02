@@ -207,8 +207,9 @@ sudo docker pull izone/arm:tomcat
 docker run --rm --name Tomcat -h tomcat -e PASS="admin" -p 8080:8080 -ti izone/arm:tomcat
 http://10.0.0.50:8080/
 
-(15) Virtual Box:
-----------------
+(15) Install Pi4J prerequisites:
+-------------------------------
+sudo apt-get install pigpio
 
 (16) Open JDK 17:
 -----------------
