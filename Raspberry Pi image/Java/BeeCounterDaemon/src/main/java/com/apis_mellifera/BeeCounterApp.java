@@ -9,6 +9,7 @@ import com.pi4j.boardinfo.util.BoardInfoHelper;
 import com.pi4j.context.Context;
 import com.pi4j.io.gpio.digital.*;
 import com.pi4j.util.Console;
+import com.pi4j.io.gpio.digital.DigitalState;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -97,9 +98,9 @@ public class BeeCounterApp {
                     console.println(event.source());
                     console.println("] STATE CHANGE: ");
                     //System.out.println(event.state());
-                    /*if (event.state() == DigitalState.HIGH) {
-                        console.println("Button is pressed");
-                    } */
+                    if (event.state() == DigitalState.HIGH) {
+                        console.println("Light Barrier Crossed");
+                    }
                 }
             });
         }

@@ -211,6 +211,9 @@ http://10.0.0.50:8080/
 -------------------------------
 sudo apt-get install pigpio
 
+Start pigpio daemon process:
+sudo pigpiod
+
 (16) Open JDK 17:
 -----------------
 sudo apt-cache search jdk
@@ -231,4 +234,4 @@ cd '$HOME/shares/public/BeeCounter/Raspberry Pi image/Java/BeeCounterDaemon'
 Create FAT Jar via Maven:
 mvn clean package assembly:single -DskipTests
 Execute Java standalone JAR file
-java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar
+java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar -Dpi4j.debug
