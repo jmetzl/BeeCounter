@@ -24,6 +24,7 @@
         <id>central</id>
         <url>https://repo.maven.apache.org/maven2</url>
       </repository>
+
   </repositories>
 
   <dependencies>
@@ -63,6 +64,12 @@
     <dependency>
       <groupId>com.pi4j</groupId>
       <artifactId>pi4j-plugin-gpiod</artifactId>
+      <version>${pi4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.pi4j</groupId>
+      <artifactId>pi4j-library-pigpio</artifactId>
       <version>${pi4j.version}</version>
     </dependency>
 
