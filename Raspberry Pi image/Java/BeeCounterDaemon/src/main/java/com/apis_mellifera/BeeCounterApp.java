@@ -85,7 +85,7 @@ public class BeeCounterApp {
                     .id(lightBarrier.getId().toString())
                     .name(lightBarrier.getType().concat(" Light Barrier (ID: ").concat(lightBarrier.getId().toString()))
                     .address(lightBarrier.getGpioPin())
-                    .provider("pigpio-digital-input");
+                    .build();
 
             var lightBarrierInput = pi4jContext.create(lightBarrierConfig);
 
@@ -93,10 +93,13 @@ public class BeeCounterApp {
             lightBarrierInput.addListener(new DigitalStateChangeListener() {
                 @Override
                 public void onDigitalStateChange(DigitalStateChangeEvent event) {
-                    System.out.println("DIGITAL INPUT [");
-                    System.out.println(event.source());
-                    System.out.println("] STATE CHANGE: ");
+                    console.println("DIGITAL INPUT [");
+                    console.println(event.source());
+                    console.println("] STATE CHANGE: ");
                     //System.out.println(event.state());
+                    /*if (event.state() == DigitalState.HIGH) {
+                        console.println("Button is pressed");
+                    } */
                 }
             });
         }
