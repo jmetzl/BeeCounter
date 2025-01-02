@@ -198,6 +198,9 @@ docker --version
 
 sudo usermod -aG docker pi
 
+sudo systemctl stop docker
+
+
 
 sudo docker pull izone/arm:tomcat
 docker run --rm --name Tomcat -h tomcat -e PASS="admin" -p 8080:8080 -ti izone/arm:tomcat
@@ -224,6 +227,6 @@ git clone https://github.com/jmetzl/BeeCounter
 cd '$HOME/shares/public/BeeCounter/Raspberry Pi image/Java/BeeCounterDaemon'
 
 Create FAT Jar via Maven:
-mvn clean package assembly:single
+mvn clean package assembly:single -DskipTests
 Execute Java standalone JAR file
 java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar

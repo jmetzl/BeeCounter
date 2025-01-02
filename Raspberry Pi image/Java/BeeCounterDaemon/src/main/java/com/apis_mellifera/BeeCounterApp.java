@@ -74,7 +74,7 @@ public class BeeCounterApp {
             Properties properties = new Properties();
             properties.put("id", lightBarrier.getId().toString());
             properties.put("address", lightBarrier.getGpioPort());
-            properties.put("pull", "UP");
+            properties.put("pull", "DOWN");
             properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
             DigitalInputConfig config = DigitalInput.newConfigBuilder(pi4j)
                     .load(properties)
