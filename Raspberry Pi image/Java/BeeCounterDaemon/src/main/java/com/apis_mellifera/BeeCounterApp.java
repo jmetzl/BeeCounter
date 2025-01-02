@@ -74,13 +74,22 @@ public class BeeCounterApp {
             Properties properties = new Properties();
             properties.put("id", lightBarrier.getId().toString());
             properties.put("address", lightBarrier.getGpioPort());
-            properties.put("pull", "DOWN");
+            properties.put("pull", "UP");
             properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
             DigitalInputConfig config = DigitalInput.newConfigBuilder(pi4j)
                     .load(properties)
                     .build();
             DigitalInput input = pi4j.din().create(config);
-            input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
+            // input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
+            input.addListener(new DigitalStateChangeListener() {
+                @Override
+                public void onDigitalStateChange(DigitalStateChangeEvent event) {
+                    System.out.println("DIGITAL INPUT [");
+                    System.out.println(event.source());
+                    System.out.println("] STATE CHANGE: ");
+                    //System.out.println(event.state());
+                }
+            });
         }
         while (true) {
             // Endless loop while waiting for Light Barrier Cross events
