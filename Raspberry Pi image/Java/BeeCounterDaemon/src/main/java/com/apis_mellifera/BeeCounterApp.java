@@ -73,17 +73,16 @@ public class BeeCounterApp {
         for (LightBarrier lightBarrier : lightBarriers) {
 
             System.out.println("Initializing digital input for ".concat(lightBarrier.getType()).concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString())).concat(") on GPIO pin ").concat(lightBarrier.getGpioPin().toString()));
-            Properties properties = new Properties();
-            properties.put("id", lightBarrier.getId().toString());
-            properties.put("address", lightBarrier.getGpioPin());
-            // properties.put("pull", "UP");
-            properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
-            var config = DigitalInput.newConfigBuilder(pi4j)
-                    .load(properties)
-                    .build();
-            var input = pi4j.din().create(config);
+            var lightBarrierConfig = DigitalInput.newConfigBuilder(pi4j)
+                    .id(lightBarrier.getId().toString())
+                    .name(lightBarrier.getType().concat(" Light Barrier (ID: ").concat(lightBarrier.getId().toString()))
+                    .address(lightBarrier.getGpioPin())
+                    .provider("pigpio-digital-input");
+
+            var lightBarrierInput = pi4j.create(lightBarrierConfig);
+
             // input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
-            input.addListener(new DigitalStateChangeListener() {
+            lightBarrierInput.addListener(new DigitalStateChangeListener() {
                 @Override
                 public void onDigitalStateChange(DigitalStateChangeEvent event) {
                     System.out.println("DIGITAL INPUT [");
