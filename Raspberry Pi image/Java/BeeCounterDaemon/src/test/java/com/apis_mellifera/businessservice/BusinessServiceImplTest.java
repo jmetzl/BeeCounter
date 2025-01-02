@@ -43,10 +43,10 @@ public class BusinessServiceImplTest {
         List<LightBarrier> lightBarriers = businessService.getAllLightBarriers(entityManager);
 
         try {
-            System.out.println(String.format("%15s   %15s  %15s  %15s", "Hive Entrance ID", "Light Barrier ID", "Type", "GPIO Port"));
-            System.out.println(String.format("%15s   %15s  %15s  %15s", "------", "-----------", "-----------", "-----------"));
+            System.out.println(String.format("%15s   %15s  %15s  %15s %15s", "Hive Entrance ID", "Light Barrier ID", "Type", "GPIO Port", "GPIO Pin"));
+            System.out.println(String.format("%15s   %15s  %15s  %15s %15s", "----------------", "----------------", "----", "---------", "--------"));
             for (LightBarrier lightBarrier : lightBarriers) {
-                System.out.println(String.format("%15s   %15s  %15s  %15s", lightBarrier.getHeId(), lightBarrier.getId(), lightBarrier.getType(), lightBarrier.getGpioPort()));
+                System.out.println(String.format("%15s   %15s  %15s  %15s %15s", lightBarrier.getHeId(), lightBarrier.getId(), lightBarrier.getType(), lightBarrier.getGpioPort(), lightBarrier.getGpioPin()));
             }
         } catch (Exception exception) {
             System.out.println("Error occured while loading all Bee Traffic entries");

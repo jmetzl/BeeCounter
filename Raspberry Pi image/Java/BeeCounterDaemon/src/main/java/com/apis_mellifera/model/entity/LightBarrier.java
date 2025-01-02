@@ -25,6 +25,9 @@ public class LightBarrier implements Serializable {
     @Column(name = "LB_GPIO_PORT", nullable = false)
     private Integer gpioPort;
 
+    @Column(name = "LB_GPIO_PIN", nullable = false)
+    private Integer gpioPin;
+
     @Column(name = "LB_HE_ID", nullable = false)
     private Integer heId;
 
@@ -45,6 +48,14 @@ public class LightBarrier implements Serializable {
 
     public Integer getGpioPort() {
         return gpioPort;
+    }
+
+    public Integer getGpioPin() {
+        return gpioPin;
+    }
+
+    public void setGpioPin(Integer gpioPin) {
+        this.gpioPin = gpioPin;
     }
 
     public void setHeId(Integer heId) {
@@ -68,6 +79,7 @@ public class LightBarrier implements Serializable {
         return "LightBarrier{" +
                 "id=" + id + '\'' +
                 "gpioPort=" + gpioPort + '\'' +
+                "gpioPin=" + gpioPin + '\'' +
                 "heId=" + heId + '\'' +
                 "type=" + type + '\'' +
                 '}';
