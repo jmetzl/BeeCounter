@@ -8,6 +8,7 @@ import com.pi4j.Pi4J;
 import com.pi4j.boardinfo.util.BoardInfoHelper;
 import com.pi4j.context.Context;
 import com.pi4j.io.gpio.digital.*;
+import com.pi4j.io.gpio.*;
 import com.pi4j.util.Console;
 import jakarta.persistence.*;
 
@@ -41,7 +42,7 @@ public class BeeCounterApp {
         // ------------------------------------------------------------
         // Initialize the Pi4J Runtime Context
         // ------------------------------------------------------------
-        Context pi4j = Pi4J.newAutoContext();
+        var pi4j = Pi4J.newAutoContext();
 
         // ------------------------------------------------------------
         // Output Pi4J Context information
@@ -68,7 +69,6 @@ public class BeeCounterApp {
 
         // System.setProperty("pi4j.host", "10.0.0.50");
         // Create GPIO controller instance final GpioController gpio = GpioFactory.getInstance();
-        //final GpioControlle gpio = GpioFactor.getInstance();
 
         for (LightBarrier lightBarrier : lightBarriers) {
 
@@ -78,10 +78,10 @@ public class BeeCounterApp {
             properties.put("address", lightBarrier.getGpioPin());
             // properties.put("pull", "UP");
             properties.put("name", lightBarrier.getType().concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString()).concat(")")));
-            DigitalInputConfig config = DigitalInput.newConfigBuilder(pi4j)
+            var config = DigitalInput.newConfigBuilder(pi4j)
                     .load(properties)
                     .build();
-            DigitalInput input = pi4j.din().create(config);
+            var input = pi4j.din().create(config);
             // input.addListener(new CustomDigitalStateChangeListener(entityManagerIn, lightBarrier));
             input.addListener(new DigitalStateChangeListener() {
                 @Override
