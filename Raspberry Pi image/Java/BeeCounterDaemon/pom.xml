@@ -75,6 +75,12 @@
 
     <dependency>
       <groupId>com.pi4j</groupId>
+      <artifactId>pi4j-plugin-pigpio</artifactId>
+      <version>${pi4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.pi4j</groupId>
       <artifactId>pi4j-board-info</artifactId>
       <version>0.3.0</version>
     </dependency>
