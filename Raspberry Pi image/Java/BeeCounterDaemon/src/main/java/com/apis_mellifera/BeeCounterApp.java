@@ -92,7 +92,12 @@ public class BeeCounterApp {
             });
         }
         while (true) {
-            // Endless loop while waiting for Light Barrier Cross events
+            try {
+                Thread.sleep(100);
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         // Shutdown Pi4J
         //pi4j.shutdown();
