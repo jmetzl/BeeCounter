@@ -86,7 +86,7 @@ public class BeeCounterApp {
                     .id(lightBarrier.getId().toString())
                     .name(lightBarrier.getType().concat(" Light Barrier (ID: ").concat(lightBarrier.getId().toString()))
                     .address(lightBarrier.getGpioPin())
-                    .pull(PullResistance.OFF)
+                    .pull(PullResistance.UP)
                     .build();
 
             var lightBarrierInput = pi4jContext.create(lightBarrierConfig);
