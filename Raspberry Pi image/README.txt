@@ -221,3 +221,5 @@ mvn --version
 
 Create FAT Jar via Maven:
 mvn clean package
+Execute Java standalone JAR file
+java -jar BeeCounterDaemon-1.0.0.jar
