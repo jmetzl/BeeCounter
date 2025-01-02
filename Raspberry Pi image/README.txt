@@ -159,6 +159,7 @@ sudo nginx -s reload
 
 sudo systemctl start nginx
 sudo systemctl status nginx
+sudo systemctl disable nginx
 
 (11) Install DB:
 ----------------
@@ -199,7 +200,7 @@ docker --version
 sudo usermod -aG docker pi
 
 sudo systemctl stop docker
-
+sudo systemctl disable docker
 
 
 sudo docker pull izone/arm:tomcat
