@@ -16,7 +16,7 @@ import java.util.Properties;
 
 public class BeeCounterApp {
     public static void main(String[] args) {
-        //PersistenceProvider provider = new PersistenceProvider();
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "INFO");
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
         EntityManager entityManager = factory.createEntityManager();
 
