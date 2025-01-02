@@ -72,7 +72,7 @@ public class BeeCounterApp {
 
         for (LightBarrier lightBarrier : lightBarriers) {
 
-            System.out.println("Initializing digital input for ".concat(lightBarrier.getType()).concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString())).concat(") on GPIO port ").concat(lightBarrier.getGpioPort().toString()));
+            System.out.println("Initializing digital input for ".concat(lightBarrier.getType()).concat(" Light Barrier (ID: ".concat(lightBarrier.getId().toString())).concat(") on GPIO pin ").concat(lightBarrier.getGpioPin().toString()));
             Properties properties = new Properties();
             properties.put("id", lightBarrier.getId().toString());
             properties.put("address", lightBarrier.getGpioPin());
