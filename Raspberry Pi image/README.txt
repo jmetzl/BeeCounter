@@ -219,7 +219,11 @@ sudo apt-cache search maven
 sudo apt install maven
 mvn --version
 
+cd $HOME/shares/public/
+git clone https://github.com/jmetzl/BeeCounter
+cd '$HOME/shares/public/BeeCounter/Raspberry Pi image/Java/BeeCounterDaemon'
+
 Create FAT Jar via Maven:
-mvn clean package
+mvn clean package assembly:single
 Execute Java standalone JAR file
-java -jar BeeCounterDaemon-1.0.0.jar
+java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar
