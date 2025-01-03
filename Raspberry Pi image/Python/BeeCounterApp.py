@@ -25,24 +25,24 @@ def insert_event_into_db():
 
         connection.commit()
         print(f"Event logged at {event_time}")
-        except mysql.connector.Error as e:
-            print(f"Error inserting Light Barrier crossing event into database: {e}")
-        finally:
-            if connection.is_connected():
-                cursor.close()
-                connection.close()
+    except mysql.connector.Error as e:
+        print(f"Error inserting Light Barrier crossing event into database: {e}")
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
 
-        def gpio_even_callback(channel):
-            print ("GPIO input changed!")
-            insert_event_into_db()
+    def gpio_even_callback(channel):
+        print ("GPIO input changed!")
+        insert_event_into_db()
 
-        GPIO.add_event_detect(GPIO_PIN, GPIO.RISING, callback=gpio_even_callback, bouncetime = 200)
+    GPIO.add_event_detect(GPIO_PIN, GPIO.RISING, callback=gpio_even_callback, bouncetime = 200)
 
-        try:
-            print("Monitoring GPIO input ...")
-            while True:
-                pass
-         except KeyboradInterrupt:
-            print ("Exiting...")
-         finally:
-            GPIO.cleanup()
+    try:
+        print("Monitoring GPIO input ...")
+        while True:
+            pass
+     except KeyboradInterrupt:
+        print ("Exiting...")
+     finally:
+        GPIO.cleanup()
