@@ -33,17 +33,17 @@ def insert_event_into_db():
             cursor.close()
             connection.close()
 
-    def gpio_even_callback(channel):
-        print ("GPIO input changed!")
-        insert_event_into_db()
+def gpio_even_callback(channel):
+    print ("GPIO input changed!")
+    insert_event_into_db()
 
-    GPIO.add_event_detect(GPIO_PIN, GPIO.RISING, callback=gpio_even_callback, bouncetime = 200)
+GPIO.add_event_detect(GPIO_PIN, GPIO.RISING, callback=gpio_even_callback, bouncetime = 200)
 
-    try:
-        print("Monitoring GPIO input ...")
-        while True:
-            pass
-    except KeyboardInterrupt:
-        print ("Exiting...")
-    finally:
-        GPIO.cleanup()
+try:
+    print("Monitoring GPIO input ...")
+    while True:
+        pass
+except KeyboardInterrupt:
+    print ("Exiting...")
+finally:
+    GPIO.cleanup()
