@@ -42,7 +42,7 @@ def insert_event_into_db():
         print("Monitoring GPIO input ...")
         while True:
             pass
-     except KeyboardInterrupt:
+    except KeyboardInterrupt:
         print ("Exiting...")
-     finally:
+    finally:
         GPIO.cleanup()
