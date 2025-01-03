@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import mysql.connector
 from datetime import datetime
 
+# Database configuration
 DB_CONFIG = {
     'host':'10.0.0.50',
     'user':'pi',
