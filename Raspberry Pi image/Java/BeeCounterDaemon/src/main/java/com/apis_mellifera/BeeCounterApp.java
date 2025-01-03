@@ -99,12 +99,14 @@ public class BeeCounterApp {
                     console.println(event.source());
                     console.println("] STATE CHANGE: ");
                     //System.out.println(event.state());
-                    if (event.state() == DigitalState.HIGH) {
+                    if (event.state() == DigitalState.LOW) {
                         console.println("Light Barrier Crossed");
                     }
                 }
             });
         }
+        PrintInfo.printRegistry(console, pi4jContext);
+
         while (true) {
             try {
                 Thread.sleep(100);
