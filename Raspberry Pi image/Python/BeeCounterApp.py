@@ -3,9 +3,9 @@ import mysql.connector
 from datetime import datetime
 
 DB_CONFIG = {
-    'host':'10.0.0.50'
-    'user':'pi'
-    'password':''
+    'host':'10.0.0.50',
+    'user':'pi',
+    'password':'\&pegasus1\&',
     'database':'beecounterdb'
 }
 
