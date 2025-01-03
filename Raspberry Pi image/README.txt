@@ -212,8 +212,37 @@ http://10.0.0.50:8080/
 sudo apt-get install pigpio
 
 Start pigpio daemon process:
-sudo pigpiod
+sudo systemctl start pigpiod
+sudo systemctl status pigpiod
 
+sudo journalctl -u pigpiod
+sudo tail -f /var/log/syslog | grep pigpiod
+
+-- Enable detailed logging
+sudo vi /lib/systemd/system/pigpiod.service
+--
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pigpiod
+--
+sudo systemctl daemon-reload
+sudo systemctl restart pigpiod
+--
+-- Enable rsyslog
+sudo apt update
+sudo apt full-upgrade
+sudo apt install rsyslog
+sudo vi /etc/rsyslog.conf
+--
+sudo sed -i 's/#$ModLoad imudp/$ModLoad imudp/' /etc/rsyslog.conf
+sudo sed -i 's/#$ModLoad imtcp/$ModLoad imtcp/' /etc/rsyslog.conf
+--
+sudo systemctl restart rsyslog
+sudo systemctl status rsyslog
+
+
+--
 (16) Open JDK 17:
 -----------------
 sudo apt-cache search jdk
