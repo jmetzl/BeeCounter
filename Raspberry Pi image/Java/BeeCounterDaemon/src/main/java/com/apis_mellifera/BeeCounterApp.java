@@ -17,6 +17,7 @@ import java.util.List;
 public class BeeCounterApp {
     public static void main(String[] args) {
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "DEBUG");
+        System.setProperty("pi4j.pigpio.remote.port","8888");
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
         EntityManager entityManager = factory.createEntityManager();
 

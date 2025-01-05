@@ -212,8 +212,16 @@ http://10.0.0.50:8080/
 sudo apt-get install pigpio
 
 Start pigpio daemon process:
+sudo systemctl enable pippiod
 sudo systemctl start pigpiod
 sudo systemctl status pigpiod
+
+sudo pigpiod -t 2 -l
+
+-t ... set the logging level (
+0 ... error
+1 ... warning
+2 ... debug)
 
 sudo journalctl -u pigpiod
 sudo tail -f /var/log/syslog | grep pigpiod
@@ -264,3 +272,8 @@ Create FAT Jar via Maven:
 mvn clean package assembly:single -DskipTests
 Execute Java standalone JAR file
 sudo java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar -Dpi4j.debug
+
+(18) Telnet:
+-----------
+sudo apt-cache search telnet
+sudo apt-get install telnet
