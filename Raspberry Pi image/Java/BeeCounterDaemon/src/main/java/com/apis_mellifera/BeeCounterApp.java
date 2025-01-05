@@ -16,7 +16,7 @@ import java.util.List;
 
 public class BeeCounterApp {
     public static void main(String[] args) {
-        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "INFO");
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "DEBUG");
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("beecounterPU");
         EntityManager entityManager = factory.createEntityManager();
 
