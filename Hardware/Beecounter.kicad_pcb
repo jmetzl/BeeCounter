@@ -38702,7 +38702,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 18 "Net-(D3-K)")
+			(net 66 "Net-(D10-K)")
 			(pinfunction "Pin_16")
 			(pintype "passive")
 			(uuid "884db6ec-16f0-4cf9-b731-978ef805f01b")
@@ -38724,7 +38724,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 66 "Net-(D10-K)")
+			(net 18 "Net-(D3-K)")
 			(pinfunction "Pin_18")
 			(pintype "passive")
 			(uuid "2aafe9fa-3a16-4afe-b122-be4f021395bd")
@@ -39997,7 +39997,7 @@
 	)
 	(gr_line
 		(start 73.35 48.1)
-		(end 73.35 51.5)
+		(end 73.35 50.253657)
 		(stroke
 			(width 0.3)
 			(type default)
@@ -40119,17 +40119,6 @@
 		(uuid "22bdf119-4b1c-40f7-a9ca-19ea8e00f5a4")
 	)
 	(gr_line
-		(start 68.3 48.6)
-		(end 68.3 51.427764)
-		(stroke
-			(width 0.3)
-			(type default)
-		)
-		(layer "B.Cu")
-		(net 18)
-		(uuid "2358d8d2-444d-4f0f-b65d-b6db429a8812")
-	)
-	(gr_line
 		(start 51.825 155.6)
 		(end 51.825 148.199831)
 		(stroke
@@ -40141,8 +40130,8 @@
 		(uuid "253680d2-d8f6-4b48-88a4-d1cf419c6d84")
 	)
 	(gr_line
-		(start 69.6 49.45)
-		(end 72.65 52.5)
+		(start 72.135 49.505)
+		(end 72.135 51.205)
 		(stroke
 			(width 0.4)
 			(type default)
@@ -40285,8 +40274,8 @@
 		(uuid "3ace9907-e678-4626-be6b-dca77d3b1be6")
 	)
 	(gr_line
-		(start 68.425 51.425)
-		(end 66.175 53.675)
+		(start 69.49 50.35)
+		(end 66.169996 53.670004)
 		(stroke
 			(width 0.4)
 			(type default)
@@ -41074,17 +41063,6 @@
 		(uuid "ad0d8009-15ee-44bd-980a-3a2bb8c9e548")
 	)
 	(gr_line
-		(start 68.8 48.1)
-		(end 68.3 48.6)
-		(stroke
-			(width 0.4)
-			(type default)
-		)
-		(layer "B.Cu")
-		(net 18)
-		(uuid "ad6f2e32-f93a-4111-bb78-d89d8342b174")
-	)
-	(gr_line
 		(start 84.55 110.05)
 		(end 82.847365 108.347365)
 		(stroke
@@ -41094,6 +41072,17 @@
 		(layer "B.Cu")
 		(net 66)
 		(uuid "ae477e69-83a3-4308-8b06-6a126695cda0")
+	)
+	(gr_line
+		(start 69.55 49.44)
+		(end 69.55 50.351976)
+		(stroke
+			(width 0.4)
+			(type default)
+		)
+		(layer "B.Cu")
+		(net 18)
+		(uuid "af08ad64-843c-4c5a-9c04-f4ffeea5ed73")
 	)
 	(gr_line
 		(start 88.11192 132.65)
@@ -41129,25 +41118,26 @@
 		(uuid "b2f8e37a-f5c3-4a0e-b446-74ff794af009")
 	)
 	(gr_line
-		(start 72.15 49.4)
-		(end 70.85 48.1)
+		(start 74.76 51.62)
+		(end 77.90094 51.62)
 		(stroke
 			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
-		(net 18)
-		(uuid "b419b3ea-6d59-411d-9f40-a4c4884db1c4")
+		(net 59)
+		(uuid "b5796714-7c62-4886-9ac8-2d747300637e")
 	)
 	(gr_line
-		(start 73.35 51.5)
-		(end 77.851881 51.5)
+		(start 73.363614 50.253614)
+		(end 74.76 51.62)
 		(stroke
 			(width 0.4)
 			(type default)
 		)
 		(layer "B.Cu")
-		(uuid "b5796714-7c62-4886-9ac8-2d747300637e")
+		(net 107)
+		(uuid "b5d4b3a3-6ad0-457f-b30b-39b9ff580fd7")
 	)
 	(gr_rect
 		(start 65 100)
@@ -41307,17 +41297,6 @@
 		(uuid "e0547f0b-e084-47b1-a5ac-d710855f2a72")
 	)
 	(gr_line
-		(start 70.85 48.1)
-		(end 68.8 48.1)
-		(stroke
-			(width 0.3)
-			(type default)
-		)
-		(layer "B.Cu")
-		(net 18)
-		(uuid "e310ee54-5006-4ba2-9d16-1af3d12631c4")
-	)
-	(gr_line
 		(start 50.4 52.7)
 		(end 46.449684 56.650316)
 		(stroke
@@ -41373,7 +41352,7 @@
 		(uuid "f1627674-24a0-4e4e-bea6-9e338becb42b")
 	)
 	(gr_line
-		(start 72.65 52.5)
+		(start 73.46 52.5)
 		(end 77.35 52.5)
 		(stroke
 			(width 0.4)
@@ -41382,6 +41361,17 @@
 		(layer "B.Cu")
 		(net 66)
 		(uuid "f22f5475-7d89-4527-83cd-9fa1d56b7e81")
+	)
+	(gr_line
+		(start 72.135 51.205)
+		(end 73.445086 52.515086)
+		(stroke
+			(width 0.4)
+			(type default)
+		)
+		(layer "B.Cu")
+		(net 66)
+		(uuid "f6862c56-b620-4a03-a7e3-6d20196e373a")
 	)
 	(gr_rect
 		(start 35.65 43.05)
