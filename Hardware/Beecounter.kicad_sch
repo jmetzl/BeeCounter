@@ -2123,191 +2123,6 @@
 				)
 			)
 		)
-		(symbol "Jumper:Jumper_3_Bridged12"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim yes)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at -2.54 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper_3_Bridged12"
-				(at 0 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Jumper, 3-pole, pins 1+2 closed/bridged"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Jumper SPDT"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Jumper* TestPoint*3Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper_3_Bridged12_0_0"
-				(circle
-					(center -3.302 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 3.302 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_3_Bridged12_0_1"
-				(arc
-					(start -0.254 0.508)
-					(mid -1.651 0.9912)
-					(end -3.048 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -0.508)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_3_Bridged12_1_1"
-				(pin passive line
-					(at -6.35 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Sensor_Proximity:ITR9608-F"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3168,12 +2983,6 @@
 		(uuid "2ba4a383-73d9-40fc-ae0f-d2979ff059c6")
 	)
 	(junction
-		(at 161.29 664.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2c7b5b59-43a6-4531-80f9-62959fea8667")
-	)
-	(junction
 		(at 198.12 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3232,12 +3041,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "35fdfd30-6c2a-4d72-9d3d-39c49f3a7520")
-	)
-	(junction
-		(at 142.24 670.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "36257da0-b18e-4dc1-b517-ec8fca4342b7")
 	)
 	(junction
 		(at 459.74 59.69)
@@ -3966,12 +3769,6 @@
 		(uuid "b65c7266-bd9d-49af-83ef-fbaf7c7a7524")
 	)
 	(junction
-		(at 146.05 676.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b6852024-f39b-4e13-8675-1fddd8c277b2")
-	)
-	(junction
 		(at 436.88 250.19)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4084,12 +3881,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c779847d-f054-46aa-991d-1aed319e3d04")
-	)
-	(junction
-		(at 146.05 664.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c7c8f408-a400-45e6-b101-a3845e855d7d")
 	)
 	(junction
 		(at 454.66 415.29)
@@ -5345,16 +5136,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 687.07) (xy 146.05 687.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c8a61f7-f47a-42c8-9ab4-adb9a05c096b")
-	)
-	(wire
-		(pts
 			(xy 156.21 477.52) (xy 156.21 504.19)
 		)
 		(stroke
@@ -5552,16 +5333,6 @@
 			(type default)
 		)
 		(uuid "232f0c8e-fc1b-4204-af7e-ccc6fa5164f7")
-	)
-	(wire
-		(pts
-			(xy 146.05 664.21) (xy 146.05 665.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23eea295-877a-42c6-877a-be157c81cb94")
 	)
 	(wire
 		(pts
@@ -6365,16 +6136,6 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 670.56) (xy 144.78 670.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3dab11cd-2c8e-4490-baf6-675b439e13af")
-	)
-	(wire
-		(pts
 			(xy 184.15 694.69) (xy 184.15 676.91)
 		)
 		(stroke
@@ -6725,16 +6486,6 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 675.64) (xy 146.05 676.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47504fc6-a283-401e-871d-adfc9691984d")
-	)
-	(wire
-		(pts
 			(xy 477.52 481.33) (xy 477.52 502.92)
 		)
 		(stroke
@@ -7015,16 +6766,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 654.05) (xy 146.05 654.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50493fb7-854c-479a-ad4d-b820b462d48f")
-	)
-	(wire
-		(pts
 			(xy 478.79 278.13) (xy 496.57 278.13)
 		)
 		(stroke
@@ -7112,16 +6853,6 @@
 			(type default)
 		)
 		(uuid "53751bec-a948-4c3f-81ff-d9766020c47b")
-	)
-	(wire
-		(pts
-			(xy 146.05 687.07) (xy 146.05 676.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "538abb28-293d-4ddc-84f9-28cfbcae8e70")
 	)
 	(wire
 		(pts
@@ -7295,16 +7026,6 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 664.21) (xy 146.05 654.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5aa390ca-34dd-4aa2-8b27-797d76ee8685")
-	)
-	(wire
-		(pts
 			(xy 133.35 472.44) (xy 140.97 472.44)
 		)
 		(stroke
@@ -7415,7 +7136,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 670.56) (xy 142.24 670.56)
+			(xy 118.11 687.07) (xy 161.29 687.07)
 		)
 		(stroke
 			(width 0)
@@ -7902,16 +7623,6 @@
 			(type default)
 		)
 		(uuid "700f0853-3e6e-4d91-8367-083923a19a15")
-	)
-	(wire
-		(pts
-			(xy 161.29 664.21) (xy 161.29 654.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7012048d-3c5c-4b62-b709-db4d75543434")
 	)
 	(wire
 		(pts
@@ -11285,7 +10996,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 670.56) (xy 118.11 554.99)
+			(xy 118.11 687.07) (xy 118.11 554.99)
 		)
 		(stroke
 			(width 0)
@@ -14546,7 +14257,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 353.06 0)
 			(effects
 				(font
@@ -15346,7 +15057,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 403.86 350.52 0)
 			(effects
 				(font
@@ -16155,7 +15866,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 407.67 102.87 0)
 			(effects
 				(font
@@ -16829,7 +16540,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 403.86 438.15 0)
 			(effects
 				(font
@@ -18156,7 +17867,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 270.51 0)
 			(effects
 				(font
@@ -18198,77 +17909,6 @@
 			(project "Beecounter"
 				(path "/bf1fad0e-6a86-49c9-965e-c45578b7af4d"
 					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_3_Bridged12")
-		(at 146.05 670.56 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "757dfea0-c4b5-4b38-8d2b-50c11327b113")
-		(property "Reference" "JP1"
-			(at 149.86 670.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_3_Bridged12"
-			(at 152.4 670.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 146.05 670.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 146.05 670.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 3-pole, pins 1+2 closed/bridged"
-			(at 146.05 670.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "21214609-02b7-4b77-80fa-103bd9d7ee04")
-		)
-		(pin "3"
-			(uuid "690cb061-9830-4f60-af82-d7c84208277d")
-		)
-		(pin "2"
-			(uuid "684661ac-930d-4a4c-b94b-0a823b3a3b10")
-		)
-		(instances
-			(project "Beecounter"
-				(path "/bf1fad0e-6a86-49c9-965e-c45578b7af4d"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -19323,7 +18963,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 187.96 0)
 			(effects
 				(font
@@ -20703,7 +20343,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 439.42 0)
 			(effects
 				(font
@@ -21118,7 +20758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 402.59 519.43 0)
 			(effects
 				(font
@@ -21937,7 +21577,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 406.4 185.42 0)
 			(effects
 				(font
@@ -23027,7 +22667,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 26.67 0)
 			(effects
 				(font
@@ -23870,7 +23510,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 405.13 267.97 0)
 			(effects
 				(font
@@ -25785,7 +25425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 521.97 0)
 			(effects
 				(font
@@ -26286,7 +25926,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 408.94 26.67 0)
 			(effects
 				(font
@@ -26767,7 +26407,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 156.21 105.41 0)
 			(effects
 				(font
