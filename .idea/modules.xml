@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BeeCounter.iml" filepath="$PROJECT_DIR$/.idea/BeeCounter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pi4j-example-fatjar/pi4j-example-fatjar.iml" filepath="$PROJECT_DIR$/../pi4j-example-fatjar/pi4j-example-fatjar.iml" />
     </modules>
   </component>
 </project>

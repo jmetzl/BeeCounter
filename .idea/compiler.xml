@@ -9,11 +9,15 @@
         <module name="BeeCounterDaemon" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pi4j-example-fatjar" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value=" -mfloat-abi=hard -mfpu=vfp" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BeeCounterDaemon" options="" />
+      <module name="pi4j-example-fatjar" options="" />
     </option>
   </component>
 </project>
