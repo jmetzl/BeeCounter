@@ -46,7 +46,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(pcbplotparams
-			(layerselection 0x0001000_ffffffff)
+			(layerselection 0x00010c0_ffffffff)
 			(plot_on_all_layers_selection 0x0000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
@@ -41903,6 +41903,28 @@
 		(layer "B.Cu")
 		(net 44)
 		(uuid "ff47ab7e-4cce-4ab8-868b-0b8f4e25c35f")
+	)
+	(gr_rect
+		(start 39.975 40.05)
+		(end 95.05 200.1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "B.Mask")
+		(uuid "caed3905-46ab-4e5c-a543-4e74947f0108")
+	)
+	(gr_rect
+		(start 40 40)
+		(end 95.05 200.1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.Mask")
+		(uuid "cd4ba7c0-50e5-45f4-8e56-3d43c736f6e5")
 	)
 	(gr_text "www.apis-mellifera.at"
 		(at 42.59 69.97 90)
