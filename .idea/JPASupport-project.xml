@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoGeneratorSettingsState">
+    <option name="ignoredFields">
+      <set>
+        <option value="" />
+      </set>
+    </option>
+    <option name="moduleName" value="BeeCounterDaemon" />
+    <option name="moduleNameToSettings">
+      <map>
+        <entry key="BeeCounter">
+          <value>
+            <ModuleSettings />
+          </value>
+        </entry>
+        <entry key="BeeCounterDaemon">
+          <value>
+            <ModuleSettings>
+              <option name="controllerPackageName" value="com.apis_mellifera.model.controller" />
+              <option name="controllerParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+              <option name="dtoParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+              <option name="entityPackageName" value="com.apis_mellifera.model.entity" />
+              <option name="entityParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+              <option name="generateRepository" value="false" />
+              <option name="mapperXmlParentDirectory" value="C:\Users\juerg\IdeaProjects\BeeCounter\Raspberry Pi image\Java\BeeCounterDaemon\src\main\resources" />
+              <option name="repositoryPackageName" value="com.apis_mellifera.model.repository" />
+              <option name="repositoryParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+              <option name="serviceParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+              <option name="voParentDirectory" value="$PROJECT_DIR$/Raspberry Pi image/Java/BeeCounterDaemon/src/main/java" />
+            </ModuleSettings>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="useLombok" value="false" />
+  </component>
+  <component name="DatabaseSettingsState">
+    <option name="database" value="beecounterdb" />
+    <option name="driverClass" value="org.mariadb.jdbc.Driver" />
+    <option name="driverPath" value="C:\Users\juerg\.m2\repository\org\mariadb\jdbc\mariadb-java-client\3.5.1\mariadb-java-client-3.5.1.jar" />
+    <option name="host" value="10.0.0.50" />
+    <option name="url" value="jdbc:mariadb://{host}:{port}/{database}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+    <option name="username" value="pi" />
+  </component>
+</project>

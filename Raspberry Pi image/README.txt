@@ -159,6 +159,7 @@ sudo nginx -s reload
 
 sudo systemctl start nginx
 sudo systemctl status nginx
+sudo systemctl disable nginx
 
 (11) Install DB:
 ----------------
@@ -198,13 +199,81 @@ docker --version
 
 sudo usermod -aG docker pi
 
+sudo systemctl stop docker
+sudo systemctl disable docker
+
 
 sudo docker pull izone/arm:tomcat
 docker run --rm --name Tomcat -h tomcat -e PASS="admin" -p 8080:8080 -ti izone/arm:tomcat
 http://10.0.0.50:8080/
 
-(15) Virtual Box:
-----------------
+(15) Install Pi4J prerequisites:
+-------------------------------
+sudo apt-get install pigpio
 
-(16) Maria DB:
-----------------
+Start pigpio daemon process:
+sudo systemctl enable pippiod
+sudo systemctl start pigpiod
+sudo systemctl status pigpiod
+
+sudo pigpiod -t 2 -l
+
+-t ... set the logging level (
+0 ... error
+1 ... warning
+2 ... debug)
+
+sudo journalctl -u pigpiod
+sudo tail -f /var/log/syslog | grep pigpiod
+
+-- Enable detailed logging
+sudo vi /lib/systemd/system/pigpiod.service
+--
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pigpiod
+--
+sudo systemctl daemon-reload
+sudo systemctl restart pigpiod
+--
+-- Enable rsyslog
+sudo apt update
+sudo apt full-upgrade
+sudo apt install rsyslog
+sudo vi /etc/rsyslog.conf
+--
+sudo sed -i 's/#$ModLoad imudp/$ModLoad imudp/' /etc/rsyslog.conf
+sudo sed -i 's/#$ModLoad imtcp/$ModLoad imtcp/' /etc/rsyslog.conf
+--
+sudo systemctl restart rsyslog
+sudo systemctl status rsyslog
+
+
+--
+(16) Open JDK 17:
+-----------------
+sudo apt-cache search jdk
+sudo apt-get install openjdk-17-jdk
+java --version
+
+
+(17) Maven:
+-----------
+sudo apt-cache search maven
+sudo apt install maven
+mvn --version
+
+cd $HOME/shares/public/
+git clone https://github.com/jmetzl/BeeCounter
+cd '$HOME/shares/public/BeeCounter/Raspberry Pi image/Java/BeeCounterDaemon'
+
+Create FAT Jar via Maven:
+mvn clean package assembly:single -DskipTests
+Execute Java standalone JAR file
+sudo java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar -Dpi4j.debug
+
+(18) Telnet:
+-----------
+sudo apt-cache search telnet
+sudo apt-get install telnet
