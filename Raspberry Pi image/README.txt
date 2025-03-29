@@ -294,3 +294,10 @@ pair 00:1F:20:4D:B9:EE
 trust 00:1F:20:4D:B9:EE
 connect 00:1F:20:4D:B9:EE
 exit
+
+(21) Install Logitech mouse driver M308
+
+lsusb
+dmesg | grep -i logitech
+sudo rmmod hid_logitech_dj
+sudo modprobe hid_logitech_dj
