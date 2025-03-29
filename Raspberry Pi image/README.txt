@@ -277,3 +277,20 @@ sudo java -jar BeeCounterDaemon-1.0.0-jar-with-dependencies.jar -Dpi4j.debug
 -----------
 sudo apt-cache search telnet
 sudo apt-get install telnet
+
+(19) FQDN access
+
+
+(20) Keyboard setup (Logitech K810)
+
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+bluetoothctl show
+bluetoothctl
+scan on
+<click on F1, F2 or F3 on keyboard>
+pair 00:1F:20:4D:B9:EE
+<enter pi on keyboard>
+trust 00:1F:20:4D:B9:EE
+connect 00:1F:20:4D:B9:EE
+exit
